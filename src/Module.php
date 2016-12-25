@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl;
 
 use Zend\Mvc\ModuleRouteListener;
 use ZF\MvcAuth\MvcAuthEvent;

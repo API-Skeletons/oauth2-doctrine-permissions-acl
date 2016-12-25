@@ -5,7 +5,7 @@
  * @copyright Copyright (c) 2016 Tom H Anderson <tom.h.anderson@gmail.com> for api-skeletons/zf-oauth2-doctrine-permissions
  */
 
-namespace ZF\OAuth2\Doctrine\Permissions\Authorization;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
 abstract class AclAuthorizationFactory
 {

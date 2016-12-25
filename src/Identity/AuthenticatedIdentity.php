@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Identity;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl\Identity;
 
 use ZF\MvcAuth\Identity\IdentityInterface;
 use Zend\Permissions\Rbac\AbstractRole as AbstractRbacRole;

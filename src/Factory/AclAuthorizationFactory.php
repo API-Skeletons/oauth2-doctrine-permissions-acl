@@ -5,14 +5,14 @@
  * @copyright Copyright (c) 2016 Tom H Anderson <tom.h.anderson@gmail.com> for api-skeletons/zf-oauth2-doctrine-permissions
  */
 
-namespace ZF\OAuth2\Doctrine\Permissions\Factory;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl\Factory;
 
 use Interop\Container\ContainerInterface;
 use Zend\Http\Request;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use ZF\OAuth2\Doctrine\Permissions\Authorization\AclAuthorization;
-use ZF\OAuth2\Doctrine\Permissions\Authorization\AclAuthorizationFactory as AclFactory;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorization;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorizationFactory as AclFactory;
 
 /**
  * Factory for creating an AclAuthorization instance from configuration

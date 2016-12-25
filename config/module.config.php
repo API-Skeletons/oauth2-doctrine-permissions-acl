@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl;
 
 return [
     'service_manager' => [

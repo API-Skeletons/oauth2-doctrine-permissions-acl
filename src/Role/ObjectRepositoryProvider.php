@@ -7,7 +7,7 @@
  * @copyright Copyright (c) 2016 Tom H Anderson <tom.h.anderson@gmail.com> for api-skeletons/zf-oauth2-doctrine-permissions
  */
 
-namespace ZF\OAuth2\Doctrine\Permissions\Role;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl\Role;
 
 use Acl\Role\Role;
 use Acl\Role\HierarchicalRoleInterface;

@@ -1,12 +1,12 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Authentication;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authentication;
 
 use Interop\Container\ContainerInterface;
 use ZF\MvcAuth\MvcAuthEvent;
 use ZF\MvcAuth\Identity\AuthenticatedIdentity as MvcAuthAuthenticatedIdentity;
-use ZF\OAuth2\Doctrine\Permissions\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
-use ZF\OAuth2\Dooctrine\Permissions\Exception;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
+use ZF\OAuth2\Dooctrine\Permissions\Acl\Exception;
 
 class AuthenticationPostListener
 {

@@ -1,11 +1,7 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions;
-
-use ZF\MvcAuth\Authorization\AuthorizationInterface;
-
 return [
-    'zf-oauth2-doctrine-permissions' => [
+    'zf-oauth2-doctrine-permissions-acl' => [
         'role' => [
             'entity' => 'Db\Entity\Role',
             'object_manager' => 'doctrine.entitymanager.orm_default',

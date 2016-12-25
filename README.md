@@ -1,4 +1,4 @@
-This provides ACL (and RBAC) for zf-oauth2-doctrine
+This provides ACL for zf-oauth2-doctrine
 
 ![Entity Relationship Diagram](https://raw.githubusercontent.com/API-Skeletons/zf-oauth2-doctrine-permissions/master/media/erd.png)
 

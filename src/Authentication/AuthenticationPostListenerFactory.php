@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Authentication;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authentication;
 
 use Interop\Container\ContainerInterface;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Authorization;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
-use ZF\OAuth2\Doctrine\Permissions\Role\ObjectRepositoryProvider;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
 use Interop\Container\ContainerInterface;
 
 class AuthorizationListenerFactory
@@ -11,9 +11,9 @@ class AuthorizationListenerFactory
     {
         $config = $container->get('config');
 
-        $objectManager = $container->get($config['zf-oauth2-doctrine-permissions']['role']['object_manager']);
+        $objectManager = $container->get($config['zf-oauth2-doctrine-permissions-acl']['role']['object_manager']);
         $objectRepositoryProvider = new ObjectRepositoryProvider(
-            $objectManager->getRepository($config['zf-oauth2-doctrine-permissions']['role']['entity'])
+            $objectManager->getRepository($config['zf-oauth2-doctrine-permissions-acl']['role']['entity'])
         );
 
         return new AuthorizationListener($objectRepositoryProvider);

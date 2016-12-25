@@ -1,6 +1,6 @@
 {
-    "name": "api-skeletons/zf-oauth2-doctrine-permissions",
-    "description": "ACL and RBAC permissions for zf-oauth2-doctrine",
+    "name": "api-skeletons/zf-oauth2-doctrine-permissions-acl",
+    "description": "ACL permissions for zf-oauth2-doctrine",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -8,8 +8,7 @@
         "doctrine",
         "apigility",
         "permissions",
-        "acl",
-        "rbac"
+        "acl"
     ],
     "authors": [
         {
@@ -28,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ZF\\OAuth2\\Doctrine\\Permissions\\": "src/"
+            "ZF\\OAuth2\\Doctrine\\Permissions\\Acl\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZFTest\\OAuth2\\Doctrine\\Permissions\\": "test/"
+            "ZFTest\\OAuth2\\Doctrine\\Permissions\\Acl\\": "test/"
         }
     }
 }

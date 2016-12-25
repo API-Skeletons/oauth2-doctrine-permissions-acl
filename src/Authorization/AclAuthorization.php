@@ -5,12 +5,12 @@
  * @copyright Copyright (c) 2016 Tom H Anderson <tom.h.anderson@gmail.com> for api-skeletons/zf-oauth2-doctrine-permissions
  */
 
-namespace ZF\OAuth2\Doctrine\Permissions\Authorization;
+namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
 use Zend\Permissions\Acl\Acl;
 use ZF\MvcAuth\Identity\IdentityInterface;
 use ZF\MvcAuth\Authorization\AuthorizationInterface;
-use ZF\OAuth2\Doctrine\Permissions\Identity\AuthenticatedIdentity;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity;
 
 class AclAuthorization extends Acl implements AuthorizationInterface
 {
