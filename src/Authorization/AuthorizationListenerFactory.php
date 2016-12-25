@@ -12,7 +12,7 @@ class AuthorizationListenerFactory
         $config = $container->get('config');
 
         // If the Role configuration exists
-        if (isset($config['zf-oauth2-doctrine-permissions-acl']['role']) {
+        if (isset($config['zf-oauth2-doctrine-permissions-acl']['role'])) {
             $objectManager = $container->get($config['zf-oauth2-doctrine-permissions-acl']['role']['object_manager']);
             $objectRepositoryProvider = new ObjectRepositoryProvider(
                 $objectManager->getRepository($config['zf-oauth2-doctrine-permissions-acl']['role']['entity'])
