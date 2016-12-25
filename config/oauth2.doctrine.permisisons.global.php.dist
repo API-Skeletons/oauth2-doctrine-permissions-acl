@@ -5,13 +5,10 @@ namespace ZF\OAuth2\Doctrine\Permissions;
 use ZF\MvcAuth\Authorization\AuthorizationInterface;
 
 return [
-    'service_manager'    => [
-        'aliases'    => [
-// Uncomment for ACL
-//            AuthorizationInterface::class => Authorization\AclAuthorization::class,
-        ],
-        'factories' => [
-            Authorization\AclAuthorization::class => Factory\AclAuthorizationFactory::class,
+    'zf-oauth2-doctrine-permissions' => [
+        'role' => [
+            'entity' => 'Db\Entity\Role',
+            'object_manager' => 'doctrine.entitymanager.orm_default',
         ],
     ],
 ];

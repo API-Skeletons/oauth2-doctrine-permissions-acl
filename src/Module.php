@@ -45,5 +45,13 @@ class Module
             $authenticationPostListener,
             100
         );
+
+        // Add all ACL roles
+        $authorizationListener = $serviceManager->get(Authorization\AuthorizationListener::class);
+        $eventManager->attach(
+            MvcAuthEvent::EVENT_AUTHORIZATION,
+            $authorizationListener,
+            1000
+        );
     }
 }
