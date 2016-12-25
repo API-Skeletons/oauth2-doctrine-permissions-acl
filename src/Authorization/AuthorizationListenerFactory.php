@@ -11,10 +11,16 @@ class AuthorizationListenerFactory
     {
         $config = $container->get('config');
 
-        $objectManager = $container->get($config['zf-oauth2-doctrine-permissions-acl']['role']['object_manager']);
-        $objectRepositoryProvider = new ObjectRepositoryProvider(
-            $objectManager->getRepository($config['zf-oauth2-doctrine-permissions-acl']['role']['entity'])
-        );
+        // If the Role configuration exists
+        if (isset($config['zf-oauth2-doctrine-permissions-acl']['role']) {
+            $objectManager = $container->get($config['zf-oauth2-doctrine-permissions-acl']['role']['object_manager']);
+            $objectRepositoryProvider = new ObjectRepositoryProvider(
+                $objectManager->getRepository($config['zf-oauth2-doctrine-permissions-acl']['role']['entity'])
+            );
+        } else {
+            // Return an empty provider
+            $objectRepositoryProvider = new ObjectRepositoryProvider();
+        }
 
         return new AuthorizationListener($objectRepositoryProvider);
     }

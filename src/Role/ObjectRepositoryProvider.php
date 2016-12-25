@@ -18,7 +18,7 @@ class ObjectRepositoryProvider
 {
     protected $objectRepository;
 
-    public function __construct(ObjectRepository $objectRepository)
+    public function __construct(ObjectRepository $objectRepository = null)
     {
         $this->objectRepository = $objectRepository;
     }
@@ -26,21 +26,24 @@ class ObjectRepositoryProvider
     public function getRoles()
     {
         $roles = [];
-        foreach ($this->objectRepository->findAll() as $role) {
-            if (! $role instanceof RoleInterface) {
-                continue;
-            }
 
-            $parents = [];
-            if ($role instanceof HierarchicalRoleInterface) {
-                $parent = $role->getParent();
-                while ($parent) {
-                    $parents[] = $parent->getRoleId();
-                    $parent = $parent->getParent();
+        if ($this->objectRepository) {
+            foreach ($this->objectRepository->findAll() as $role) {
+                if (! $role instanceof RoleInterface) {
+                    continue;
                 }
-            }
 
-            $roles[] = new Role($role->getRoleId(), $parents);
+                $parents = [];
+                if ($role instanceof HierarchicalRoleInterface) {
+                    $parent = $role->getParent();
+                    while ($parent) {
+                        $parents[] = $parent->getRoleId();
+                        $parent = $parent->getParent();
+                    }
+                }
+
+                $roles[] = new Role($role->getRoleId(), $parents);
+            }
         }
 
         return $roles;

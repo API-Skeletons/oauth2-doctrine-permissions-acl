@@ -28,6 +28,7 @@ class AclAuthorization extends Acl implements AuthorizationInterface
                 }
             }
         } else {
+            // Guest access
             if (! $this->hasRole($identity)) {
                 $this->addRole($identity);
             }
