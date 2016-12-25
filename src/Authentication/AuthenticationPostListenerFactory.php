@@ -8,6 +8,6 @@ class AuthenticationPostListenerFactory
 {
     public function __invoke(ContainerInterface $container)
     {
-        return new AuthenticationPostListener($conatiner);
+        return new AuthenticationPostListener($container);
     }
 }

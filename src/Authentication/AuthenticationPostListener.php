@@ -8,7 +8,7 @@ use ZF\MvcAuth\Identity\AuthenticatedIdentity as MvcAuthAuthenticatedIdentity;
 use ZF\OAuth2\Doctrine\Permissions\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
 use ZF\OAuth2\Dooctrine\Permissions\Exception;
 
-class AuthenticationListener
+class AuthenticationPostListener
 {
     protected $container;
 
@@ -41,7 +41,7 @@ class AuthenticationListener
 
         foreach ($config['zf-oauth2-doctrine'] as $oauth2Config) {
             $objectManager = $this->container->get($oauth2Config['object_manager']);
-            $accessTokenRepository = $objectManger->getRepository($oauth2Config['mapping']['AccessToken']['entity']);
+            $accessTokenRepository = $objectManager->getRepository($oauth2Config['mapping']['AccessToken']['entity']);
 
             $accessToken = $accessTokenRepository->findOneBy([
                 $oauth2Config['mapping']['AccessToken']['mapping']['access_token']['name']
