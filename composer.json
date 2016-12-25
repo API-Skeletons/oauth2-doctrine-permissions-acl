@@ -1,0 +1,37 @@
+{
+    "name": "api-skeletons/zf-oauth2-doctrine-permissions",
+    "description": "ACL and RBAC permissions for zf-oauth2-doctrine",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "oauth2",
+        "doctrine",
+        "apigility",
+        "permissions",
+        "acl",
+        "rbac"
+    ],
+    "authors": [
+        {
+            "name": "Tom H Anderson",
+            "email": "tom.h.anderson@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "container-interop/container-interop": "^1.1",
+        "zfcampus/zf-mvc-auth": "^1.4",
+        "api-skeletons/zf-oauth2-doctrine": "^1.1",
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "ZF\\OAuth2\\Doctrine\\Permissions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZFTest\\OAuth2\\Doctrine\\Permissions\\": "test/"
+        }
+    }
+}
