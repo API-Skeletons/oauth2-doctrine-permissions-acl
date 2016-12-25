@@ -1,3 +1,9 @@
+OAuth2 Doctrine Permissions ACL
+-------------------------------
+
+[![Build Status](https://travis-ci.org/API-Skeletons/zf-oauth2-doctrine-permissions-acl.svg)](https://travis-ci.org/API-Skeletons/zf-oauth2-doctrine-permissions-acl)
+[![Total Downloads](https://poser.pugx.org/api-skeletons/zf-oauth2-doctrine-permissions-acl/downloads)](https://packagist.org/packages/api-skeletons/zf-oauth2-doctrine-permissions-acl)
+
 About
 -----
 
