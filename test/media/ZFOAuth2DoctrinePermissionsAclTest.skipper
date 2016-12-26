@@ -31,15 +31,17 @@
       </many-to-many-entity>
     </many-to-many>
     <comment caption="$user-&gt;getRole()" uuid="6237a60c-447d-4dab-8bc1-ffd9b97b307d"/>
+    <comment caption="Data Architect" description="tom.h.anderson@gmail.com" uuid="d458614b-11eb-4480-ac8c-76ac2e43e5a2"/>
   </module>
   <visual-data>
     <association uuid="ed955ccb-445b-47d9-af6f-784a24f96bc7" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="-20" color="#969696"/>
     <comment uuid="6237a60c-447d-4dab-8bc1-ffd9b97b307d" bg-color="#FFFFE0" position-x="172" position-y="87" size-x="0" size-x2="79" size-y="0" size-y2="20" txt-color="#000000"/>
+    <comment uuid="d458614b-11eb-4480-ac8c-76ac2e43e5a2" bg-color="#FFFFE0" position-x="317" position-y="175" size-x="0" size-x2="121" size-y="0" size-y2="30" txt-color="#000000"/>
     <entity uuid="59150071-f917-499b-8c8f-e656acf884a3" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="328" position-y="13" size-x="0" size-x2="87" size-y="0" size-y2="59"/>
     <entity uuid="85f0eaf8-4362-4d64-8aaa-248ce7aa7b31" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="172" position-y="12" size-x="0" size-x2="84" size-y="0" size-y2="60"/>
     <entity uuid="888a6a37-9d0c-497f-accc-ec5ab40235fe" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="10" position-y="20"/>
     <many-to-many-association uuid="520341ba-c82d-450d-a590-69ae6f6687d1" color="#969696"/>
-    <module uuid="b6eeda23-9d51-4019-99a0-544a7d024c24" bg-color="#E7F5FD" position-x="35" position-y="44" size-x="11" size-x2="706" size-y="22" size-y2="414"/>
-    <project uuid="b9373761-2af6-4a3b-88c8-6291e4b09235" size-x="26" size-x2="766" size-y="28" size-y2="481"/>
+    <module uuid="b6eeda23-9d51-4019-99a0-544a7d024c24" bg-color="#E7F5FD" position-x="35" position-y="44" size-x="11" size-x2="452" size-y="22" size-y2="218"/>
+    <project uuid="b9373761-2af6-4a3b-88c8-6291e4b09235" size-x="26" size-x2="537" size-y="28" size-y2="312"/>
   </visual-data>
 </skipper>

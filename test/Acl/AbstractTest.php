@@ -1,10 +1,11 @@
 <?php
 
-namespace ZFTest\OAuth2\Doctrine\ORM;
+namespace ZFTest\OAuth2\Doctrine\Permissions\Acl;
 
 use Doctrine\ORM\Tools\SchemaTool;
 use ZF\OAuth2\Doctrine\Entity;
 use ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User;
+use ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role;
 use Zend\Crypt\Password\Bcrypt;
 use Datetime;
 use Exception;
@@ -14,6 +15,13 @@ abstract class AbstractTest extends AbstractHttpControllerTestCase
 {
     public function provideStorage()
     {
+        $this->setUp();
+
+        $serviceManager = $this->getApplication()->getServiceManager();
+        $config = $this->getApplication()->getConfig();
+        $doctrineAdapter = $serviceManager->get('oauth2.doctrineadapter.default');
+
+        return array(array($doctrineAdapter));
     }
 
     protected function tearDown()
@@ -77,6 +85,31 @@ abstract class AbstractTest extends AbstractHttpControllerTestCase
             $user->setPhoneNumber('phone');
             $user->setEmail('doctrine@zfcampus');
 
+            // Add role specifics
+            $role1 = new Role();
+            $role1->setRoleId('Guest');
+            $objectManager->persist($role1);
+            $user->addRole($role1);
+            $role1->addUser($user);
+
+            $role2 = new Role();
+            $role2->setRoleId('User');
+            $objectManager->persist($role2);
+            $role2->setParent($role1);
+            $user->addRole($role2);
+            $role2->addUser($user);
+
+            $role3 = new Role();
+            $role3->setRoleId('Admin');
+            $objectManager->persist($role3);
+            $role3->setParent($role2);
+            $user->addRole($role3);
+            $role3->addUser($user);
+
+            $role4 = new Role();
+            $role4->setRoleId('notallowed');
+            $objectManager->persist($role4);
+
             $user2 = new User();
 
             $objectManager->persist($user);
@@ -87,6 +120,7 @@ abstract class AbstractTest extends AbstractHttpControllerTestCase
             $client->setSecret($bcrypt->create('testpass'));
             $client->setGrantType(array(
                 'implicit',
+                'password',
             ));
             $client->setUser($user);
             $client->addScope($scope);
@@ -97,6 +131,7 @@ abstract class AbstractTest extends AbstractHttpControllerTestCase
             $client2->setSecret($bcrypt->create('testpass'));
             $client2->setGrantType(array(
                 'implicit',
+                'password',
             ));
             $client2->setUser($user2);
 

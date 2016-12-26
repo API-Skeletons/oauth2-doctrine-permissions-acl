@@ -13,6 +13,41 @@ class Role implements
     protected $roleId;
     protected $user;
 
+    public function __construct()
+    {
+        $this->user = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->child = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add user
+     *
+     * @param \Db\Entity\User $user
+     *
+     * @return Role
+     */
+    public function addUser(\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User $user)
+    {
+        $this->user[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \Db\Entity\User $user
+     */
+    public function removeUser(\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User $user)
+    {
+        $this->user->removeElement($user);
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
     public function getUser()
     {
         return $this->user;

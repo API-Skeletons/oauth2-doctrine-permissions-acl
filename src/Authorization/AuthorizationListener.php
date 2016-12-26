@@ -23,7 +23,9 @@ class AuthorizationListener
 
         // Add all roles
         foreach ($this->roleProvider->getRoles() as $role) {
-            $authorization->addRole($role, $role->getParent());
+            if (! $authorization->hasRole($role)) {
+                $authorization->addRole($role, $role->getParent());
+            }
         }
     }
 }

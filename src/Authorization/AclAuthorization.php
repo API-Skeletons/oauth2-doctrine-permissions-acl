@@ -22,10 +22,12 @@ class AclAuthorization extends Acl implements AuthorizationInterface
             $this->addResource($resource);
         }
 
-        if ($identity->getUser() instanceof ProviderInterface) {
-            foreach ($identity->getUser()->getRole() as $role) {
-                if ($this->isAllowed($role->getRoleId(), $resource, $privilege)) {
-                    return true;
+        if ($identity instanceof AuthenticatedIdentity) {
+            if ($identity->getUser() instanceof ProviderInterface) {
+                foreach ($identity->getUser()->getRole() as $role) {
+                    if ($this->isAllowed($role->getRoleId(), $resource, $privilege)) {
+                        return true;
+                    }
                 }
             }
         } else {

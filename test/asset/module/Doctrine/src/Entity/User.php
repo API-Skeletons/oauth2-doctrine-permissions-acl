@@ -4,8 +4,12 @@ namespace ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity;
 
 use ZF\OAuth2\Doctrine\Entity\UserInterface;
 use Zend\Stdlib\ArraySerializableInterface;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
 
-class User implements UserInterface, ArraySerializableInterface
+class User implements
+    UserInterface,
+    ArraySerializableInterface,
+    ProviderInterface
 {
     protected $id;
     protected $client;
@@ -14,6 +18,38 @@ class User implements UserInterface, ArraySerializableInterface
     protected $refreshToken;
 
     protected $role;
+
+    /**
+     * Add role
+     *
+     * @param \Db\Entity\Role $role
+     *
+     * @return User
+     */
+    public function addRole(\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role $role)
+    {
+        $this->role[] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Remove role
+     *
+     * @param \Db\Entity\Role $role
+     */
+    public function removeRole(\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role $role)
+    {
+        $this->role->removeElement($role);
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->role = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     // OpenID fields
     protected $username;

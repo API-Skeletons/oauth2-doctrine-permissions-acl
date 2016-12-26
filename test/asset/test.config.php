@@ -1,15 +1,34 @@
 <?php
 
 $modules = [
-    'ZF\ContentNegotiation',
+    'Zend\\Cache',
+    'Zend\\Form',
+    'Zend\\I18n',
+    'Zend\\Filter',
+    'Zend\\Hydrator',
+    'Zend\\InputFilter',
+    'Zend\\Paginator',
+    'Zend\\Router',
+    'Zend\\Validator',
+    'ZF\\Apigility',
     'ZF\\ApiProblem',
-    'ZF\\MvcAuth',
+//    'ZF\\Configuration',
     'ZF\\OAuth2',
+    'ZF\\MvcAuth',
+    'ZF\\Hal',
+    'ZF\\ContentNegotiation',
+    'ZF\\ContentValidation',
+    'ZF\\Rest',
+    'ZF\\Rpc',
+    'ZF\\Versioning',
+    'Phpro\\DoctrineHydrationModule',
+    'ZF\\Apigility\\Doctrine\\Server',
     'ZF\\OAuth2\\Doctrine',
     'ZF\\OAuth2\\Doctrine\\Permissions\\Acl',
     'ZFTest\\OAuth2\\Doctrine\\Permissions\\Acl',
     'DoctrineModule',
     'DoctrineORMModule',
+    'TestApi',
 ];
 
 if (class_exists(Zend\Router\Module::class)) {
@@ -30,6 +49,7 @@ return [
             __DIR__ . '/../../vendor',
             __DIR__ . '/module',
             'ZFTest\\OAuth2\\Doctrine\\Permissions\\Acl' => __DIR__ . '/module/Doctrine',
+            'TestApi' => __DIR__ . '/module/TestApi',
         ],
 
         // An array of paths from which to glob configuration files after
