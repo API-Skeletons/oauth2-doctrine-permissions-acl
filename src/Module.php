@@ -5,7 +5,6 @@ namespace ZF\OAuth2\Doctrine\Permissions\Acl;
 use Zend\Mvc\ModuleRouteListener;
 use ZF\MvcAuth\MvcAuthEvent;
 use Zend\Mvc\MvcEvent;
-use Zend\Console\Request as ConsoleRequest;
 
 class Module
 {
@@ -27,11 +26,6 @@ class Module
 
     public function onBootstrap(MvcEvent $e)
     {
-        // Bypass Permissions for console routes
-        if ($e->getRequest() instanceof ConsoleRequest) {
-            return;
-        }
-
         $eventManager = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
