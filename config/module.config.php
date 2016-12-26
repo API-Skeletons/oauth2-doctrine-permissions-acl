@@ -2,10 +2,12 @@
 
 namespace ZF\OAuth2\Doctrine\Permissions\Acl;
 
+use ZF\MvcAuth\Authorization\AuthorizationInterface as MvcAuthAuthorizationInterface;
+
 return [
     'service_manager' => [
         'aliases'    => [
-            AuthorizationInterface::class => Authorization\AclAuthorization::class,
+            MvcAuthAuthorizationInterface::class => Authorization\AclAuthorization::class,
         ],
         'factories' => [
             Authentication\AuthenticationPostListener::class =>

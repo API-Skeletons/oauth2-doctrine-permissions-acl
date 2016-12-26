@@ -9,10 +9,9 @@
 
 namespace ZF\OAuth2\Doctrine\Permissions\Acl\Role;
 
-use Acl\Role\Role;
-use Acl\Role\HierarchicalRoleInterface;
 use Doctrine\Common\Persistence\ObjectRepository;
 use Zend\Permissions\Acl\Role\RoleInterface;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Role;
 
 class ObjectRepositoryProvider
 {
@@ -34,7 +33,7 @@ class ObjectRepositoryProvider
                 }
 
                 $parents = [];
-                if ($role instanceof HierarchicalRoleInterface) {
+                if ($role instanceof Role\HierarchicalInterface) {
                     $parent = $role->getParent();
                     while ($parent) {
                         $parents[] = $parent->getRoleId();
@@ -42,7 +41,7 @@ class ObjectRepositoryProvider
                     }
                 }
 
-                $roles[] = new Role($role->getRoleId(), $parents);
+                $roles[] = new Role\Role($role->getRoleId(), $parents);
             }
         }
 

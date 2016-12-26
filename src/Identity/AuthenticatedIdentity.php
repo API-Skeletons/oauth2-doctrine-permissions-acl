@@ -4,6 +4,8 @@ namespace ZF\OAuth2\Doctrine\Permissions\Acl\Identity;
 
 use ZF\MvcAuth\Identity\IdentityInterface;
 use Zend\Permissions\Rbac\AbstractRole as AbstractRbacRole;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Exception;
 
 class AuthenticatedIdentity extends AbstractRbacRole implements
     IdentityInterface
@@ -26,9 +28,7 @@ class AuthenticatedIdentity extends AbstractRbacRole implements
 
     public function getRoleId()
     {
-        if (method_exists($this->accessToken->getUser(), 'getRole')) {
-            return $this->accessToken->getUser()->getRole()->getRoleId();
-        }
+        throw new Exception\InvalidAclAuthorizationException('getRoleId called direclty on AuthentictedIdentity');
     }
 
     public function getUser()

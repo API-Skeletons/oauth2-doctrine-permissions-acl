@@ -2,7 +2,7 @@
 
 namespace ZF\OAuth2\Doctrine\Permissions\Acl\Role;
 
-interface RoleProviderInterface 
+interface ProviderInterface
 {
     public function getRole();
 }

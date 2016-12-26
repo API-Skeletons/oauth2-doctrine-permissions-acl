@@ -3,8 +3,8 @@
 namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
 use ZF\MvcAuth\MvcAuthEvent;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
 use Doctrine\ORM\EntityRepository;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
 
 class AuthorizationListener
