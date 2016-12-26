@@ -93,5 +93,4 @@ class Role implements
     {
         return $this->roleId;
     }
-
 }
