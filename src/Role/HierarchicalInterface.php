@@ -12,7 +12,7 @@ namespace ZF\OAuth2\Doctrine\Permissions\Acl\Role;
 
 use Zend\Permissions\Acl\Role\RoleInterface;
 
-interface HierarchicalRoleInterface extends RoleInterface
+interface HierarchicalInterface extends RoleInterface
 {
     public function getParent();
 }

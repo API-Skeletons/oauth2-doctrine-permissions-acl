@@ -10,18 +10,18 @@ namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
 use Zend\Permissions\Acl\Acl;
 use ZF\MvcAuth\Identity\IdentityInterface;
 use ZF\MvcAuth\Authorization\AuthorizationInterface;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity;
 
 class AclAuthorization extends Acl implements AuthorizationInterface
 {
     public function isAuthorized(IdentityInterface $identity, $resource, $privilege)
     {
-
         if (null !== $resource && (! $this->hasResource($resource))) {
             $this->addResource($resource);
         }
 
-        if ($identity instanceof AuthenticatedIdentity) {
+        if ($identity->getUser() instanceof ProviderInterface) {
             foreach ($identity->getUser()->getRole() as $role) {
                 if ($this->isAllowed($role->getRoleId(), $resource, $privilege)) {
                     return true;
