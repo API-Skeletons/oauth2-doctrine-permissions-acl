@@ -51,7 +51,7 @@ Role Related Interfaces
 
 The ERD above shows the Doctrine relationship to a `Role` entity.  To fetch Roles for a user the User enitity must implement `ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface`.  The `Role` entity must implement `Zend\Permissions\Acl\Role\RoleInterface`.
 
-Roles may have parents.  This is optional but the parent relationship is often important in ACL.  To create a role hierarcy your Role entity must implement `ZF\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface`.  This interface also implements `Zend\Permissions\Acl\Role\RoleInterface`.
+Roles may have parents.  This is optional but the parent relationship is often important in ACL.  To create a role hierarchy your Role entity must implement `ZF\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface`.  This interface also implements `Zend\Permissions\Acl\Role\RoleInterface`.
 
 
 Adding Roles to the ACL
