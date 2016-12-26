@@ -8,6 +8,8 @@
         "doctrine",
         "apigility",
         "permissions",
+        "authentication",
+        "authorization",
         "acl"
     ],
     "authors": [
