@@ -34,5 +34,10 @@
         "psr-4": {
             "ZFTest\\OAuth2\\Doctrine\\Permissions\\Acl\\": "test/"
         }
+    },
+    "extra": {
+        "zf": {
+            "module": "ZF\\OAuth2\\Doctrine\\Permissions\\Acl"
+        }
     }
 }
