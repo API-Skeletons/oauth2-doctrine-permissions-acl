@@ -21,10 +21,10 @@ Installation
 Installation of this module uses composer. For composer documentation, please refer to [getcomposer.org](http://getcomposer.org/).
 
 ```sh
-$ php composer.phar require api-skeletons/zf-oauth2-doctrine-permissions-acl
+composer require api-skeletons/zf-oauth2-doctrine-permissions-acl
 ```
 
-This will be added to your applications list of modules:
+This will be added to your application's list of modules:
 
 ```php
 'modules' => array(
