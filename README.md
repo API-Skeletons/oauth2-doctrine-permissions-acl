@@ -73,3 +73,51 @@ With all of the above this library has set the stage to create permissions on yo
 All your roles may be loaded and you can follow the official Apigility guide:
 https://apigility.org/documentation/recipes/how-do-i-customize-authorization-for-a-particular-identity
 Be sure your listener(s) run at priority < 1000.
+
+This is a short summary of the linked article.
+
+Add this bootstrap to your Module:
+```php
+namespace Application;
+
+use Zend\Mvc\MvcEvent;
+use Zend\Mvc\ModuleRouteListener;
+use Application\Authorization\AuthorizationListener;
+use ZF\MvcAuth\MvcAuthEvent;
+
+class Module
+{
+    public function onBootstrap(MvcEvent $e)
+    {
+        $eventManager        = $e->getApplication()->getEventManager();
+        $moduleRouteListener = new ModuleRouteListener();
+        $moduleRouteListener->attach($eventManager);
+
+        $eventManager->attach(
+            MvcAuthEvent::EVENT_AUTHORIZATION,
+            new AuthorizationListener(),
+            100 // Less than 1000 to allow roles to be added first
+        );
+    }
+}
+```
+
+Create your AuthorizationListener:
+```php
+namespace Application\Authorization;
+
+use ZF\MvcAuth\MvcAuthEvent;
+use Db\Fixture\RoleFixture;
+
+class AuthorizationListener
+{
+    public function __invoke(MvcAuthEvent $mvcAuthEvent)
+    {
+        $authorization = $mvcAuthEvent->getAuthorizationService();
+
+        $authorization->addResource('FooBar\V1\Rest\Foo\Controller::collection');
+        $authorization->allow(RoleFixture::USER, 'FooBar\V1\Rest\Foo\Controller::collection', 'GET');
+    }
+}
+```
+
