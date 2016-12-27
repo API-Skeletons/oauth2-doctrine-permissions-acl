@@ -7,7 +7,7 @@ OAuth2 Doctrine Permissions ACL
 About
 -----
 
-This provides ACL for [api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl).  This replaces some components of zf-mvc-auth to enable multiple roles per user and auto injecting roles into the ACL.
+This provides ACL for [api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine).  This replaces some components of zf-mvc-auth to enable multiple roles per user and auto injecting roles into the ACL.
 
 This library is specifically for a many to many relationship between Role and User.  If you have a one to many relationship where each user may have only one role this library is not for you.
 
