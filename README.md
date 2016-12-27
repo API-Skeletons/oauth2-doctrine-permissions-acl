@@ -115,6 +115,14 @@ class AuthorizationListener
     {
         $authorization = $mvcAuthEvent->getAuthorizationService();
 
+        // Deny from all
+        $authorization->deny();
+
+        // Allow from all for oauth authentication
+        $authorization->addResource('ZF\OAuth2\Controller\Auth::token');
+        $authorization->allow(null, 'ZF\OAuth2\Controller\Auth::token');
+
+        // Add application specific resources
         $authorization->addResource('FooBar\V1\Rest\Foo\Controller::collection');
         $authorization->allow(RoleFixture::USER, 'FooBar\V1\Rest\Foo\Controller::collection', 'GET');
     }
