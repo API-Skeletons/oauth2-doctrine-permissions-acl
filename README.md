@@ -33,8 +33,8 @@ This will be added to your application's list of modules:
 ),
 ```
 
-Authentication Identity
------------------------
+Authenticated Identity
+----------------------
 
 By default [zfcampus/zf-mvc-auth](https://github.com/zfcampus/zf-mvc-auth) reutrns an [`ZF\MvcAuth\Identity\AuthenticatedIdentity`](https://github.com/zfcampus/zf-mvc-auth/blob/master/src/Identity/AuthenticatedIdentity.php) when authenticated with a valid access token.  This repository replaces that identity with a [`ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity`](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl/blob/master/src/Identity/AuthenticatedIdentity.php).
 
@@ -96,7 +96,7 @@ class Module
         $eventManager->attach(
             MvcAuthEvent::EVENT_AUTHORIZATION,
             new AuthorizationListener(),
-            100 // Less than 1000 to allow roles to be added first
+            100 // Less than 1000 to allow roles to be added first && >= 100
         );
     }
 }
