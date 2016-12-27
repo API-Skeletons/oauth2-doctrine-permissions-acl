@@ -14,12 +14,17 @@ use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorization;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorizationFactory as AclFactory;
+use GianArb\Angry\Unclonable;
+use GianArb\Angry\Unserializable;
 
 /**
  * Factory for creating an AclAuthorization instance from configuration
  */
 class AclAuthorizationFactory implements FactoryInterface
 {
+    use Unclonable;
+    use Unserializable;
+
     /**
      * @var array
      */

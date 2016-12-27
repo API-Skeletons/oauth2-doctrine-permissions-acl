@@ -13,9 +13,12 @@ namespace ZF\OAuth2\Doctrine\Permissions\Acl\Role;
 use Doctrine\Common\Persistence\ObjectRepository;
 use Zend\Permissions\Acl\Role\RoleInterface;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Role;
+use GianArb\Angry\ClassDefence;
 
 class ObjectRepositoryProvider
 {
+    use ClassDefence;
+
     protected $objectRepository;
 
     public function __construct(ObjectRepository $objectRepository = null)

@@ -7,9 +7,12 @@ use ZF\MvcAuth\MvcAuthEvent;
 use ZF\MvcAuth\Identity\AuthenticatedIdentity as MvcAuthAuthenticatedIdentity;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
 use ZF\OAuth2\Dooctrine\Permissions\Acl\Exception;
+use GianArb\Angry\ClassDefence;
 
 class AuthenticationPostListener
 {
+    use ClassDefence;
+
     protected $container;
 
     public function __construct(ContainerInterface $container)

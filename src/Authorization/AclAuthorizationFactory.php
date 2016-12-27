@@ -8,8 +8,12 @@
 
 namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
+use GianArb\Angry\ClassDefence;
+
 abstract class AclAuthorizationFactory
 {
+    use ClassDefence;
+
     /**
      * Create and return an AclAuthorization instance populated with provided privileges.
      *

@@ -13,9 +13,12 @@ use ZF\MvcAuth\Identity\IdentityInterface;
 use ZF\MvcAuth\Authorization\AuthorizationInterface;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity;
+use GianArb\Angry\ClassDefence;
 
 class AclAuthorization extends Acl implements AuthorizationInterface
 {
+    use ClassDefence;
+
     public function isAuthorized(IdentityInterface $identity, $resource, $privilege)
     {
         if (null !== $resource && (! $this->hasResource($resource))) {

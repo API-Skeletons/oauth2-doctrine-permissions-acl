@@ -6,10 +6,13 @@ use ZF\MvcAuth\Identity\IdentityInterface;
 use Zend\Permissions\Rbac\AbstractRole as AbstractRbacRole;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Exception;
+use GianArb\Angry\Uninvokable;
 
 class AuthenticatedIdentity extends AbstractRbacRole implements
     IdentityInterface
 {
+    use Uninvokable;
+
     protected $accessToken;
 
     public function __construct($accessToken)
