@@ -36,25 +36,25 @@ This will be added to your applications list of modules:
 Authentication Identity
 -----------------------
 
-By default [zfcampus/zf-mvc-auth](https://github.com/zfcampus/zf-mvc-auth) reutrns an `ZF\MvcAuth\Identity\AuthenticatedIdentity` when authenticated with a valid access token.  This repository replaces that identity with a `ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity`.
+By default [zfcampus/zf-mvc-auth](https://github.com/zfcampus/zf-mvc-auth) reutrns an [`ZF\MvcAuth\Identity\AuthenticatedIdentity`](https://github.com/zfcampus/zf-mvc-auth/blob/master/src/Identity/AuthenticatedIdentity.php) when authenticated with a valid access token.  This repository replaces that identity with a [`ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity`](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl/blob/master/src/Identity/AuthenticatedIdentity.php).
 
-`ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity` stores the [api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine) `AccessToken` Doctrine entity.  The `AuthentiatedIdentity` has the functions `getUser()`, `getAccessToken()`, `getClient()` which return entities.  With these your application can continue to work with ORM through the rest of the request lifecycle.
+[`ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity`](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl/blob/master/src/Identity/AuthenticatedIdentity.php) stores the [api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine) `AccessToken` Doctrine entity.  The `AuthentiatedIdentity` has the functions `getUser()`, `getAccessToken()`, `getClient()` which return entities.  With these your application can continue to work with ORM through the rest of the request lifecycle.
 
-[api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine) supports multiple OAuth2 configurations and [api-skeletons/zf-oauth2-doctrine-permissions-acl](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl) searches through each configuration to find the `AccessToken` entity based on the `access_token` and `client_id` supplied by `ZF\MvcAuth\Identity\AuthenticatedIdentity`.
+[api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine) supports multiple OAuth2 configurations and [api-skeletons/zf-oauth2-doctrine-permissions-acl](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl) searches through each configuration to find the `AccessToken` entity based on the `access_token` and `client_id` supplied by [`ZF\MvcAuth\Identity\AuthenticatedIdentity`](https://github.com/zfcampus/zf-mvc-auth/blob/master/src/Identity/AuthenticatedIdentity.php).
 
 
 Role Related Interfaces
 -----------------------
 
-The ERD above shows the Doctrine relationship to a `Role` entity.  To fetch Roles for a user the User enitity must implement `ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface`.  The `Role` entity must implement `Zend\Permissions\Acl\Role\RoleInterface`.
+The ERD above shows the Doctrine relationship to a `Role` entity.  To fetch Roles for a user the User enitity must implement [`ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface`](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl/blob/master/src/Role/ProviderInterface.php).  The `Role` entity must implement [`Zend\Permissions\Acl\Role\RoleInterface`](https://github.com/zendframework/zend-permissions-acl/blob/master/src/Role/RoleInterface.php).
 
-Roles may have parents.  This is optional but the parent relationship is often important in ACL.  To create a role hierarchy your Role entity must implement `ZF\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface`.  This interface also implements `Zend\Permissions\Acl\Role\RoleInterface`.
+Roles may have parents.  This is optional but the parent relationship is often important in ACL.  To create a role hierarchy your Role entity must implement [`ZF\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface`](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl/blob/master/src/Role/HierarchicalInterface.php).  This interface also implements [`Zend\Permissions\Acl\Role\RoleInterface`](https://github.com/zendframework/zend-permissions-acl/blob/master/src/Role/RoleInterface.php).
 
 
 Adding Roles to the ACL
 -----------------------
 
-To copy roles into the ACL from your Role entity copy `config/oauth2.doctrine.permisisons.acl.global.php.dist` to your application `config/autoload/oauth2.doctrine.permisisons.acl.global.php`  
+To copy roles into the ACL from your Role entity copy [`config/oauth2.doctrine.permisisons.acl.global.php.dist`](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl/blob/master/config/oauth2.doctrine.permisisons.global.php.dist) to your application `config/autoload/oauth2.doctrine.permisisons.acl.global.php`  
 ```php
 'zf-oauth2-doctrine-permissions-acl' => [
     'role' => [
