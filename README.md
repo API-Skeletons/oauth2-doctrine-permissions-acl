@@ -7,7 +7,7 @@ OAuth2 Doctrine Permissions ACL
 About
 -----
 
-This provides ACL for [api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine).  This replaces some components of zf-mvc-auth to enable multiple roles per user and auto injecting roles into the ACL.
+This provides ACL for [api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine).  This replaces some components of [zfcampus/zf-mvc-auth](https://github.com/zfcampus/zf-mvc-auth) to enable multiple roles per user and auto injecting roles into the ACL.
 
 This library is specifically for a many to many relationship between Role and User.  If you have a one to many relationship where each user may have only one role this library is not for you.
 
@@ -24,7 +24,7 @@ Installation of this module uses composer. For composer documentation, please re
 $ php composer.phar require api-skeletons/zf-oauth2-doctrine-permissions-acl
 ```
 
-If composer does not automatically add this, add to this module to your application's configuration:
+This will be added to your applications list of modules:
 
 ```php
 'modules' => array(
@@ -36,11 +36,11 @@ If composer does not automatically add this, add to this module to your applicat
 Authentication Identity
 -----------------------
 
-By default zf-mvc-auth reutrns an `ZF\MvcAuth\Identity\AuthenticatedIdentity` from zf-oauth2-doctrine when a user has a valid access token.  This repository replaces that identity with a `ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity`.
+By default [zfcampus/zf-mvc-auth](https://github.com/zfcampus/zf-mvc-auth) reutrns an `ZF\MvcAuth\Identity\AuthenticatedIdentity` when authenticated with a valid access token.  This repository replaces that identity with a `ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity`.
 
-`ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity` stores the zf-oauth2-doctrine `AccessToken` Doctrine entity.  The `AuthentiatedIdentity` has the functions `getUser()`, `getAccessToken()`, `getClient()` which return entities.  With these your application can continue to work with ORM through the rest of the request lifecycle.
+`ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity` stores the [api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine) `AccessToken` Doctrine entity.  The `AuthentiatedIdentity` has the functions `getUser()`, `getAccessToken()`, `getClient()` which return entities.  With these your application can continue to work with ORM through the rest of the request lifecycle.
 
-zf-oauth2-doctrine supports multiple OAuth2 configurations and zf-oauth2-doctrine-permissions-acl searches through each configuration to find the `AccessToken` entity based on the `access_token` and `client_id` supplied by `ZF\MvcAuth\Identity\AuthenticatedIdentity`.
+[api-skeletons/zf-oauth2-doctrine](https://github.com/API-Skeletons/zf-oauth2-doctrine) supports multiple OAuth2 configurations and [api-skeletons/zf-oauth2-doctrine-permissions-acl](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl) searches through each configuration to find the `AccessToken` entity based on the `access_token` and `client_id` supplied by `ZF\MvcAuth\Identity\AuthenticatedIdentity`.
 
 
 Role Related Interfaces
