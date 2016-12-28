@@ -2,11 +2,17 @@
 
 namespace ZF\OAuth2\Doctrine\Permissions\Acl;
 
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
 use Zend\Mvc\ModuleRouteListener;
 use ZF\MvcAuth\MvcAuthEvent;
 use Zend\Mvc\MvcEvent;
 
-class Module
+class Module implements
+    AutoloaderProviderInterface,
+    ConfigProviderInterface,
+    DependencyIndicatorInterface
 {
     public function getConfig()
     {
@@ -32,14 +38,6 @@ class Module
 
         $serviceManager = $e->getApplication()->getServiceManager();
 
-        // Attach an event to replace the Identity with a DoctrineAuthenticatedIdentity
-        $authenticationPostListener = $serviceManager->get(Authentication\AuthenticationPostListener::class);
-        $eventManager->attach(
-            MvcAuthEvent::EVENT_AUTHENTICATION_POST,
-            $authenticationPostListener,
-            100
-        );
-
         // Add all ACL roles
         $authorizationListener = $serviceManager->get(Authorization\AuthorizationListener::class);
         $eventManager->attach(
@@ -47,5 +45,10 @@ class Module
             $authorizationListener,
             1000
         );
+    }
+
+    public function getModuleDependencies()
+    {
+        return array('ZF\OAuth2\Doctrine\Identity');
     }
 }

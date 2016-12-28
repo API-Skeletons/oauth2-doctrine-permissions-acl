@@ -22,7 +22,8 @@
     "require": {
         "container-interop/container-interop": "^1.1",
         "api-skeletons/zf-oauth2-doctrine": "^1.1",
-        "gianarb/angry": "^0.1.0"
+        "gianarb/angry": "^0.1",
+        "api-skeletons/zf-oauth2-doctrine-identity": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7",

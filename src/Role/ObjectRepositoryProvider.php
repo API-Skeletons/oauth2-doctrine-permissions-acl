@@ -13,11 +13,15 @@ namespace ZF\OAuth2\Doctrine\Permissions\Acl\Role;
 use Doctrine\Common\Persistence\ObjectRepository;
 use Zend\Permissions\Acl\Role\RoleInterface;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Role;
-use GianArb\Angry\ClassDefence;
+use GianArb\Angry\Unclonable;
+use GianArb\Angry\Unserializable;
+use GianArb\Angry\Uninvokable;
 
 class ObjectRepositoryProvider
 {
-    use ClassDefence;
+    use Unclonable;
+    use Unserializable;
+    use Uninvokable;
 
     protected $objectRepository;
 

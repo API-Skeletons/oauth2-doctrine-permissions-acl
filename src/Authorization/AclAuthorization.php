@@ -12,12 +12,17 @@ use Zend\Permissions\Acl\Acl;
 use ZF\MvcAuth\Identity\IdentityInterface;
 use ZF\MvcAuth\Authorization\AuthorizationInterface;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity;
-use GianArb\Angry\ClassDefence;
+use ZF\OAuth2\Doctrine\Identity\AuthenticatedIdentity;
+use GianArb\Angry\Unclonable;
+use GianArb\Angry\Unserializable;
+use GianArb\Angry\Uninvokable;
+
 
 class AclAuthorization extends Acl implements AuthorizationInterface
 {
-    use ClassDefence;
+    use Unclonable;
+    use Unserializable;
+    use Uninvokable;
 
     public function isAuthorized(IdentityInterface $identity, $resource, $privilege)
     {

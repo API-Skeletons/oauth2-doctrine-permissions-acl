@@ -24,6 +24,7 @@ $modules = [
     'Phpro\\DoctrineHydrationModule',
     'ZF\\Apigility\\Doctrine\\Server',
     'ZF\\OAuth2\\Doctrine',
+    'ZF\\OAuth2\\Doctrine\\Identity',
     'ZF\\OAuth2\\Doctrine\\Permissions\\Acl',
     'ZFTest\\OAuth2\\Doctrine\\Permissions\\Acl',
     'DoctrineModule',
