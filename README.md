@@ -86,7 +86,7 @@ class Module
         $eventManager->attach(
             MvcAuthEvent::EVENT_AUTHORIZATION,
             new AuthorizationListener(),
-            100 // Less than 1000 to allow roles to be added first
+            100 // Less than 1000 to allow roles to be added first && >= 100
         );
     }
 }
