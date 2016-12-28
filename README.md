@@ -11,6 +11,8 @@ This provides ACL for [api-skeletons/zf-oauth2-doctrine](https://github.com/API-
 
 This library is specifically for a many to many relationship between Role and User.  If you have a one to many relationship where each user may have only one role this library is not for you.
 
+This library depends on [api-skeletons/zf-oauth2-doctrine-identity](https://github.com/API-Skeletons/zf-oauth2-doctrine-identity).  Please see that library for implementation details.
+
 ![Entity Relationship Diagram](https://raw.githubusercontent.com/API-Skeletons/zf-oauth2-doctrine-permissions/master/media/erd.png)
 
 Entity Relationship Diagram created with [Skipper](https://skipper18.com)
