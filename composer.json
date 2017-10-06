@@ -18,12 +18,12 @@
             "email": "tom.h.anderson@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
+        "php": "^7.1",
         "container-interop/container-interop": "^1.1",
-        "api-skeletons/zf-oauth2-doctrine": "^1.1",
+        "api-skeletons/zf-oauth2-doctrine": "~2.0",
         "gianarb/angry": "^0.1",
-        "api-skeletons/zf-oauth2-doctrine-identity": "^1.0"
+        "api-skeletons/zf-oauth2-doctrine-identity": "~2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7",
@@ -47,7 +47,8 @@
     },
     "extra": {
         "zf": {
-            "module": "ZF\\OAuth2\\Doctrine\\Permissions\\Acl"
+            "component": "ZF\\OAuth2\\Doctrine\\Permissions\\Acl",
+            "config-provider": "ZF\\OAuth2\\Doctrine\\Permissions\\Acl\\ConfigProvider"
         }
     }
 }
