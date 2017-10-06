@@ -58,6 +58,6 @@ class Module implements
 
     public function getModuleDependencies()
     {
-        return array('ZF\OAuth2\Doctrine\Identity');
+        return ['ZF\\OAuth2\\Doctrine\\Identity'];
     }
 }
