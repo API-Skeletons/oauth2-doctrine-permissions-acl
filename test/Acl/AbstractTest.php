@@ -51,22 +51,28 @@ abstract class AbstractTest extends AbstractHttpControllerTestCase
 
             // Fixtures
             $scope = new Entity\Scope();
+            $scope->setId(1);
             $scope->setScope('clientscope1');
 
             $scope2 = new Entity\Scope();
+            $scope2->setId(2);
             $scope2->setScope('supportedscope1');
 
             $scope3 = new Entity\Scope();
+            $scope3->setId(3);
             $scope3->setScope('supportedscope2');
 
             $scope4 = new Entity\Scope();
+            $scope4->setId(4);
             $scope4->setScope('supportedscope3');
 
             $scope5 = new Entity\Scope();
+            $scope5->setId(5);
             $scope5->setScope('defaultscope1');
             $scope5->setIsDefault(true);
 
             $scope6 = new Entity\Scope();
+            $scope6->setId(6);
             $scope6->setScope('defaultscope2');
             $scope6->setIsDefault(true);
 
