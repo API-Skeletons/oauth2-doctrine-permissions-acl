@@ -17,7 +17,6 @@ use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
 use GianArb\Angry\Uninvokable;
 
-
 class AclAuthorization extends Acl implements AuthorizationInterface
 {
     use Unclonable;

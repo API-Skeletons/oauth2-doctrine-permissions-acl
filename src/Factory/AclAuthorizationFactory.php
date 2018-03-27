@@ -77,7 +77,7 @@ class AclAuthorizationFactory implements FactoryInterface
         $denyByDefault = false;
 
         if (array_key_exists('deny_by_default', $config)) {
-            $denyByDefault = $aclConfig['deny_by_default'] = (bool) $config['deny_by_default'];
+            $denyByDefault = $aclConfig['deny_by_default'] = (bool)$config['deny_by_default'];
             unset($config['deny_by_default']);
         }
 

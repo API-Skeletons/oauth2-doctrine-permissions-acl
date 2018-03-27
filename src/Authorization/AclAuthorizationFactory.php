@@ -29,7 +29,7 @@ abstract class AclAuthorizationFactory
         // Determine whether we are whitelisting or blacklisting
         $denyByDefault = false;
         if (array_key_exists('deny_by_default', $config)) {
-            $denyByDefault = (bool) $config['deny_by_default'];
+            $denyByDefault = (bool)$config['deny_by_default'];
             unset($config['deny_by_default']);
         }
 
