@@ -49,7 +49,9 @@ class ObjectRepositoryProvider
                     }
                 }
 
-                $roles[] = new Role\Role($role->getRoleId(), $parents);
+                // ACL roles for parents read right to left.  These are built
+                // left to right so reverse the array
+                $roles[] = new Role\Role($role->getRoleId(), array_reverse($parents));
             }
         }
 
