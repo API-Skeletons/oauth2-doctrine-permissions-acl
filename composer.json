@@ -23,6 +23,7 @@
         "container-interop/container-interop": "^1.1",
         "api-skeletons/zf-oauth2-doctrine": "~2.0 || ^3.0",
         "api-skeletons/zf-oauth2-doctrine-identity": "~2.0",
+        "zendframework/zend-permissions-rbac": "~2.6",
         "gianarb/angry": "^0.1"
     },
     "require-dev": {
