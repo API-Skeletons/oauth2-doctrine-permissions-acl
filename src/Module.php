@@ -17,7 +17,7 @@ class Module implements
     /**
      * Provide default configuration.
      *
-     * @param return array
+     * @return array
      */
     public function getConfig()
     {

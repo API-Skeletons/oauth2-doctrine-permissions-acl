@@ -30,8 +30,6 @@ class ConfigProvider
                 MvcAuthAuthorizationInterface::class => Authorization\AclAuthorization::class,
             ],
             'factories' => [
-                Authentication\AuthenticationPostListener::class =>
-                    Authentication\AuthenticationPostListenerFactory::class,
                 Authorization\AuthorizationListener::class =>
                     Authorization\AuthorizationListenerFactory::class,
                 Authorization\AclAuthorization::class => Factory\AclAuthorizationFactory::class,

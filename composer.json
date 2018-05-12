@@ -33,7 +33,9 @@
         "zfcampus/zf-apigility-doctrine": "^2.1",
         "zendframework/zend-i18n": "^2.7",
         "zendframework/zend-hydrator": "^2.2",
-        "api-skeletons/coding-standard": "^1.0"
+        "api-skeletons/coding-standard": "^1.0",
+        "dprevite/lint": "dev-master",
+        "phpstan/phpstan": "^0.9.2"
     },
     "autoload": {
         "psr-4": {
@@ -50,5 +52,17 @@
             "component": "ZF\\OAuth2\\Doctrine\\Permissions\\Acl",
             "config-provider": "ZF\\OAuth2\\Doctrine\\Permissions\\Acl\\ConfigProvider"
         }
+    },
+    "scripts": {
+        "check": [
+            "@lint",
+            "@phpcs",
+            "@test",
+            "@phpstan"
+        ],
+        "lint": "lint --exclude=vendor .",
+        "phpcs": "phpcs",
+        "phpstan": "phpstan analyze --level=7 src/",
+        "test": "phpunit --colors=always -d memory_limit=3G"
     }
 }

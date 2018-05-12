@@ -55,7 +55,7 @@ class AclAuthorizationFactory implements FactoryInterface
      *
      * Provided for backwards compatibility; proxies to __invoke().
      *
-     * @param ContainerInterface|ServiceLocatorInterface $container
+     * @param ServiceLocatorInterface $container
      * @return AclAuthorization
      */
     public function createService(ServiceLocatorInterface $container)
