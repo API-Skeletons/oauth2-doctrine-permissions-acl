@@ -16,6 +16,7 @@ matrix:
     - php: 7.1
       env:
         - EXECUTE_COVERAGE=true
+        - EXECUTE_CS_CHECK=true
         - DEPS=latest
     - php: 7.2
     - php: nightly
@@ -37,6 +38,7 @@ script:
   - if [[ EXECUTE_COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml ; fi
   - if [[ EXECUTE_COVERAGE != 'true' ]]; then ./vendor/bin/phpunit ; fi
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs ; fi
+  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpstan analyze --level=7 src/ ; fi
 
 after_script:
   - php vendor/bin/coveralls

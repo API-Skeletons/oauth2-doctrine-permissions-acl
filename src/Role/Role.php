@@ -10,13 +10,15 @@ class Role extends GenericRole implements
 {
     use Uninvokable;
 
+    protected $parent;
+
     public function __construct($roleId, array $parent = null)
     {
+        parent::__construct($roleId);
+
         $this->roleId = $roleId;
         $this->parent = $parent;
     }
-
-    protected $parent;
 
     public function getParent()
     {

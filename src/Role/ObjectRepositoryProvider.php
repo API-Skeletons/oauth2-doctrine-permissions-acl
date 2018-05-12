@@ -35,7 +35,29 @@ class ObjectRepositoryProvider
         $roles = [];
 
         if ($this->objectRepository) {
-            foreach ($this->objectRepository->findAll() as $role) {
+            $roles = $this->objectRepository->findAll();
+
+            // Sort roles so any with parent roles are satisfied
+            $sorted = [];
+            while (sizeof($roles)) {
+                foreach ($roles as $key => $role) {
+                    if (! $role instanceof RoleInterface) {
+                        unset($roles[$key]);
+                        continue;
+                    }
+
+                    if (! $role instanceof HierarchicalInterface
+                        || ! $role->getParent()
+                        || in_array($role->getParent(), $sorted)
+                    ) {
+                        $sorted[] = $role;
+                        unset($roles[$key]);
+                        continue;
+                    }
+                }
+            }
+
+            foreach ($sorted as $role) {
                 if (! $role instanceof RoleInterface) {
                     continue;
                 }
@@ -53,8 +75,8 @@ class ObjectRepositoryProvider
                 // left to right so reverse the array
                 $roles[] = new Role\Role($role->getRoleId(), array_reverse($parents));
             }
-        }
 
-        return $roles;
+            return $roles;
+        }
     }
 }
