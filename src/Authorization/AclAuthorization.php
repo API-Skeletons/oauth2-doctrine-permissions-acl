@@ -9,8 +9,11 @@
 namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
 use Zend\Permissions\Acl\Acl;
+use Zend\EventManager\EventManager;
+use Zend\EventManager\SharedEventManagerInterface;
 use ZF\MvcAuth\Identity\IdentityInterface;
 use ZF\MvcAuth\Authorization\AuthorizationInterface;
+use ZF\OAuth2\Doctrine\Permissions\Acl\Event;
 use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
 use ZF\OAuth2\Doctrine\Identity\AuthenticatedIdentity;
 use GianArb\Angry\Unclonable;
@@ -23,10 +26,43 @@ class AclAuthorization extends Acl implements AuthorizationInterface
     use Unserializable;
     use Uninvokable;
 
+    protected $events;
+
+    public function createEventManager(SharedEventManagerInterface $sharedEventManager)
+    {
+        $this->events = new EventManager(
+            $sharedEventManager,
+            [
+                Event::class,
+            ]
+        );
+
+        return $this->events;
+    }
+
+    public function getEventManager()
+    {
+        return $this->events;
+    }
+
     public function isAuthorized(IdentityInterface $identity, $resource, $privilege)
     {
         if (null !== $resource && (! $this->hasResource($resource))) {
             $this->addResource($resource);
+        }
+
+        // Allow for authorized override in listener
+        $results = $this->getEventManager()->trigger(
+            Event::IS_AUTHORIZED,
+            $this,
+            [
+                'identity' => $identity,
+                'resource' => $resource,
+                'privilege' => $privilege,
+            ]
+        );
+        if ($results->stopped()) {
+            return $results->last();
         }
 
         if ($identity instanceof AuthenticatedIdentity) {
