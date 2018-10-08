@@ -47,7 +47,10 @@ class AclAuthorizationFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $config = $this->getConfigFromContainer($container);
-        return $this->createAclFromConfig($config);
+        $instance = $this->createAclFromConfig($config);
+        $instance->createEventManager($container->get('SharedEventManager'));
+
+        return $instance;
     }
 
     /**

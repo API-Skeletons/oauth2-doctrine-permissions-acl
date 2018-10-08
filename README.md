@@ -54,7 +54,7 @@ Roles may have parents.  This is optional but the parent relationship is often i
 Adding Roles to the ACL
 -----------------------
 
-To copy roles into the ACL from your Role entity copy [`config/oauth2.doctrine.permisisons.acl.global.php.dist`](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl/blob/master/config/oauth2.doctrine.permisisons.global.php.dist) to your application `config/autoload/oauth2.doctrine.permisisons.acl.global.php`  
+To copy roles into the ACL from your Role entity copy [`config/oauth2.doctrine.permisisons.acl.global.php.dist`](https://github.com/API-Skeletons/zf-oauth2-doctrine-permissions-acl/blob/master/config/oauth2.doctrine.permisisons.global.php.dist) to your application `config/autoload/oauth2.doctrine.permisisons.acl.global.php`
 ```php
 'zf-oauth2-doctrine-permissions-acl' => [
     'role' => [
@@ -129,3 +129,39 @@ class AuthorizationListener
 }
 ```
 
+
+Overriding the IS_AUTHORIZED event
+----------------------------------
+
+An event manager on the AclAuthorization allows you to override any ACL call.  For instance if you have
+another entity which requires permissions based in its value you can add new Roles to your ACL manually
+then create an override when the authorization is checked to allow for those other entity values now
+proxied as roles:
+
+```
+use ZF\OAuth2\Doctrine\Permissions\Acl\Event;
+use Zend\EventManager\Event as MvcEvent;
+
+// Allow membership as a role
+$events = $serviceManager->get('SharedEventManager');
+$events->attach(
+    Event::class,
+    Event::IS_AUTHORIZED,
+    function(MvcEvent $event)
+    {
+        if (! $event->getParam('identity') instanceof AuthenticatedIdentity) {
+            return;
+        }
+
+        $membership = $event->getParam('identity')->getUser()->getMembership();
+
+        if ($event->getTarget()->isAllowed($membership->getName(), $event->getParam('resource'), $event->getParam('privilege'))) {
+            $event->stopPropagation();
+
+            return true;
+        }
+    },
+    100
+);
+
+```
