@@ -138,7 +138,7 @@ another entity which requires permissions based in its value you can add new Rol
 then create an override when the authorization is checked to allow for those other entity values now
 proxied as roles:
 
-```
+```php
 use ZF\OAuth2\Doctrine\Permissions\Acl\Event;
 use Zend\EventManager\Event as MvcEvent;
 
