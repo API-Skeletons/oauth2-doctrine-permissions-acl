@@ -140,14 +140,14 @@ proxied as roles:
 
 ```php
 use ZF\OAuth2\Doctrine\Permissions\Acl\Event;
-use Zend\EventManager\Event as MvcEvent;
+use Zend\EventManager\Event as ZendEvent;
 
 // Allow membership as a role
 $events = $serviceManager->get('SharedEventManager');
 $events->attach(
     Event::class,
     Event::IS_AUTHORIZED,
-    function(MvcEvent $event)
+    function(ZendEvent $event)
     {
         if (! $event->getParam('identity') instanceof AuthenticatedIdentity) {
             return;
