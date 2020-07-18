@@ -1,15 +1,9 @@
-OAuth2 Doctrine Permissions ACL
--------------------------------
+ACL permissions for api-skeletons/oauth2-doctrine for Laminas
+=============================================================
 
 [![Build Status](https://travis-ci.org/API-Skeletons/oauth2-doctrine-permissions-acl.svg)](https://travis-ci.org/API-Skeletons/oauth2-doctrine-permissions-acl)
 [![Gitter](https://badges.gitter.im/api-skeletons/open-source.svg)](https://gitter.im/api-skeletons/open-source)
 [![Total Downloads](https://poser.pugx.org/api-skeletons/oauth2-doctrine-permissions-acl/downloads)](https://packagist.org/packages/api-skeletons/oauth2-doctrine-permissions-acl)
-
-
-Versions
---------
-
-1.x for PHP 5.5 to 7.0.  2.x for PHP 7.1 onward.
 
 
 About
@@ -21,7 +15,7 @@ This library is specifically for a many to many relationship between Role and Us
 
 This library depends on [api-skeletons/auth2-doctrine-identity](https://github.com/API-Skeletons/auth2-doctrine-identity).  Please see that library for implementation details.
 
-![Entity Relationship Diagram](https://raw.githubusercontent.com/API-Skeletons/oauth2-doctrine-permissions/master/media/erd.png)
+![Entity Relationship Diagram](https://raw.githubusercontent.com/API-Skeletons/oauth2-doctrine-permissions-acl/master/media/erd.png)
 
 Entity Relationship Diagram created with [Skipper](https://skipper18.com)
 
