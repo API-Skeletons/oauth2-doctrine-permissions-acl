@@ -13,15 +13,13 @@ env:
 matrix:
   fast_finish: true
   include:
-    - php: 7.1
+    - php: 7.3
       env:
         - EXECUTE_COVERAGE=true
         - EXECUTE_CS_CHECK=true
         - DEPS=latest
-    - php: 7.2
-    - php: nightly
-  allow_failure:
-      - php: nightly
+    - php: 7.3
+    - php: 7.4
 
 before_install:
   - if [[ $EXECUTE_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi

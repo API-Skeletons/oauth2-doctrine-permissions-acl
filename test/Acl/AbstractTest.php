@@ -218,7 +218,6 @@ M4pYQmuiDXJbwYcf+2ECQCB3s5z9niG6oxVicCfK/l6VJNPifhtr8N48jO0ejWeB
 
             $objectManager->persist($publicKey);
             $objectManager->flush();
-
         }
     }
 }
