@@ -1,8 +1,8 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
-use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
 use Interop\Container\ContainerInterface;
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
@@ -17,10 +17,10 @@ class AuthorizationListenerFactory
         $config = $container->get('config');
 
         // If the Role configuration exists
-        if (isset($config['zf-oauth2-doctrine-permissions-acl']['role'])) {
-            $objectManager = $container->get($config['zf-oauth2-doctrine-permissions-acl']['role']['object_manager']);
+        if (isset($config['api-tools-oauth2-doctrine-permissions-acl']['role'])) {
+            $objectManager = $container->get($config['api-tools-oauth2-doctrine-permissions-acl']['role']['object_manager']);
             $objectRepositoryProvider = new ObjectRepositoryProvider(
-                $objectManager->getRepository($config['zf-oauth2-doctrine-permissions-acl']['role']['entity'])
+                $objectManager->getRepository($config['api-tools-oauth2-doctrine-permissions-acl']['role']['entity'])
             );
         } else {
             // Return an empty provider

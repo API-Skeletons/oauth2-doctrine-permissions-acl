@@ -1,11 +1,11 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
-use ZF\MvcAuth\MvcAuthEvent;
+use Laminas\ApiTools\MvcAuth\MvcAuthEvent;
 use Doctrine\ORM\EntityRepository;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
 

@@ -2,12 +2,12 @@
 
 namespace ZFTest\OAuth2\Doctrine\Permissions\Acl;
 
-use Zend\EventManager\EventManager;
-use Zend\ModuleManager\ModuleManager;
-use Zend\ServiceManager\ServiceManager;
-use ZF\OAuth2\Doctrine\EventListener\DynamicMappingSubscriber;
+use Laminas\EventManager\EventManager;
+use Laminas\ModuleManager\ModuleManager;
+use Laminas\ServiceManager\ServiceManager;
+use Laminas\ApiTools\OAuth2\Doctrine\EventListener\DynamicMappingSubscriber;
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 
 class Module
 {
@@ -18,7 +18,7 @@ class Module
      */
     public function getAutoloaderConfig()
     {
-        return ['Zend\Loader\StandardAutoloader' => ['namespaces' => [
+        return ['Laminas\Loader\StandardAutoloader' => ['namespaces' => [
             __NAMESPACE__ => __DIR__ . '/src/',
         ]
         ]

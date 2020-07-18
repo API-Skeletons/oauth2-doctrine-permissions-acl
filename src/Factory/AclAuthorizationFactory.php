@@ -3,17 +3,17 @@
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
  * @copyright Copyright (c) 2014-2016 Zend Technologies USA Inc. (http://www.zend.com)
  * @copyright Copyright (c) 2016 Tom H Anderson <tom.h.anderson@gmail.com>
- *     for api-skeletons/zf-oauth2-doctrine-permissions
+ *     for api-skeletons/api-tools-oauth2-doctrine-permissions
  */
 
-namespace ZF\OAuth2\Doctrine\Permissions\Acl\Factory;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Factory;
 
 use Interop\Container\ContainerInterface;
-use Zend\Http\Request;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorization;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorizationFactory as AclFactory;
+use Laminas\Http\Request;
+use Laminas\ServiceManager\FactoryInterface;
+use Laminas\ServiceManager\ServiceLocatorInterface;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorization;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorizationFactory as AclFactory;
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
 
@@ -67,7 +67,7 @@ class AclAuthorizationFactory implements FactoryInterface
     }
 
     /**
-     * Generate the ACL instance based on the zf-mvc-auth "authorization" configuration
+     * Generate the ACL instance based on the api-tools-mvc-auth "authorization" configuration
      *
      * Consumes the AclFactory in order to create the AclAuthorization instance.
      *
@@ -177,7 +177,7 @@ class AclAuthorizationFactory implements FactoryInterface
      * Retrieve configuration from the container.
      *
      * Attempts to pull the 'config' service, and, further, the
-     * zf-mvc-auth.authorization segment.
+     * api-tools-mvc-auth.authorization segment.
      *
      * @param ContainerInterface $container
      * @return array
@@ -190,10 +190,10 @@ class AclAuthorizationFactory implements FactoryInterface
 
         $config = $container->get('config');
 
-        if (! isset($config['zf-mvc-auth']['authorization'])) {
+        if (! isset($config['api-tools-mvc-auth']['authorization'])) {
             return [];
         }
 
-        return $config['zf-mvc-auth']['authorization'];
+        return $config['api-tools-mvc-auth']['authorization'];
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity;
 
-use ZF\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface;
 
 class Role implements
     HierarchicalInterface

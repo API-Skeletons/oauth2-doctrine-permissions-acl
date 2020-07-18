@@ -1,8 +1,8 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Acl\Role;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role;
 
-use Zend\Permissions\Acl\Role\GenericRole;
+use Laminas\Permissions\Acl\Role\GenericRole;
 use GianArb\Angry\Uninvokable;
 
 class Role extends GenericRole implements

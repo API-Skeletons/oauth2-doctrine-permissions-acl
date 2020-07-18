@@ -3,19 +3,19 @@
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
  * @copyright Copyright (c) 2014 Zend Technologies USA Inc. (http://www.zend.com)
  * @copyright Copyright (c) 2016 Tom H Anderson <tom.h.anderson@gmail.com>
- *     for api-skeletons/zf-oauth2-doctrine-permissions
+ *     for api-skeletons/api-tools-oauth2-doctrine-permissions
  */
 
-namespace ZF\OAuth2\Doctrine\Permissions\Acl\Authorization;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
-use Zend\Permissions\Acl\Acl;
-use Zend\EventManager\EventManager;
-use Zend\EventManager\SharedEventManagerInterface;
-use ZF\MvcAuth\Identity\IdentityInterface;
-use ZF\MvcAuth\Authorization\AuthorizationInterface;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Event;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
-use ZF\OAuth2\Doctrine\Identity\AuthenticatedIdentity;
+use Laminas\Permissions\Acl\Acl;
+use Laminas\EventManager\EventManager;
+use Laminas\EventManager\SharedEventManagerInterface;
+use Laminas\ApiTools\MvcAuth\Identity\IdentityInterface;
+use Laminas\ApiTools\MvcAuth\Authorization\AuthorizationInterface;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Event;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
+use Laminas\ApiTools\OAuth2\Doctrine\Identity\AuthenticatedIdentity;
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
 use GianArb\Angry\Uninvokable;

@@ -1,13 +1,13 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Acl;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl;
 
-use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
-use Zend\Mvc\ModuleRouteListener;
-use ZF\MvcAuth\MvcAuthEvent;
-use Zend\Mvc\MvcEvent;
+use Laminas\ModuleManager\Feature\AutoloaderProviderInterface;
+use Laminas\ModuleManager\Feature\ConfigProviderInterface;
+use Laminas\ModuleManager\Feature\DependencyIndicatorInterface;
+use Laminas\Mvc\ModuleRouteListener;
+use Laminas\ApiTools\MvcAuth\MvcAuthEvent;
+use Laminas\Mvc\MvcEvent;
 
 class Module implements
     AutoloaderProviderInterface,
@@ -31,7 +31,7 @@ class Module implements
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            'Laminas\Loader\StandardAutoloader' => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__,
                 ],
@@ -58,6 +58,6 @@ class Module implements
 
     public function getModuleDependencies()
     {
-        return ['ZF\\OAuth2\\Doctrine\\Identity'];
+        return ['Laminas\\ApiTools\\OAuth2\\Doctrine\\Identity'];
     }
 }

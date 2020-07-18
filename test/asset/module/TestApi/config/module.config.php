@@ -13,12 +13,12 @@ return [
             ],
         ],
     ],
-    'zf-versioning' => [
+    'api-tools-versioning' => [
         'uri' => [
             0 => 'test-api.rest.doctrine.role',
         ],
     ],
-    'zf-rest' => [
+    'api-tools-rest' => [
         'TestApi\\V1\\Rest\\Role\\Controller' => [
             'listener' => \TestApi\V1\Rest\Role\RoleResource::class,
             'route_name' => 'test-api.rest.doctrine.role',
@@ -43,7 +43,7 @@ return [
             'service_name' => 'Role',
         ],
     ],
-    'zf-content-negotiation' => [
+    'api-tools-content-negotiation' => [
         'controllers' => [
             'TestApi\\V1\\Rest\\Role\\Controller' => 'HalJson',
         ],
@@ -61,7 +61,7 @@ return [
             ],
         ],
     ],
-    'zf-hal' => [
+    'api-tools-hal' => [
         'metadata_map' => [
             \ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role::class => [
                 'route_identifier_name' => 'role_id',
@@ -76,7 +76,7 @@ return [
             ],
         ],
     ],
-    'zf-apigility' => [
+    'laminas-api-tools' => [
         'doctrine-connected' => [
             \TestApi\V1\Rest\Role\RoleResource::class => [
                 'object_manager' => 'doctrine.entitymanager.orm_default',
@@ -93,7 +93,7 @@ return [
             'use_generated_hydrator' => true,
         ],
     ],
-    'zf-content-validation' => [
+    'api-tools-content-validation' => [
         'TestApi\\V1\\Rest\\Role\\Controller' => [
             'input_filter' => 'TestApi\\V1\\Rest\\Role\\Validator',
         ],

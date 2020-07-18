@@ -1,39 +1,39 @@
 <?php
 
 $modules = [
-    'Zend\\Cache',
-    'Zend\\Form',
-    'Zend\\I18n',
-    'Zend\\Filter',
-    'Zend\\Hydrator',
-    'Zend\\InputFilter',
-    'Zend\\Paginator',
-    'Zend\\Router',
-    'Zend\\Validator',
-    'ZF\\Apigility',
-    'ZF\\ApiProblem',
-//    'ZF\\Configuration',
-    'ZF\\OAuth2',
-    'ZF\\MvcAuth',
-    'ZF\\Hal',
-    'ZF\\ContentNegotiation',
-    'ZF\\ContentValidation',
-    'ZF\\Rest',
-    'ZF\\Rpc',
-    'ZF\\Versioning',
+    'Laminas\\Cache',
+    'Laminas\\Form',
+    'Laminas\\I18n',
+    'Laminas\\Filter',
+    'Laminas\\Hydrator',
+    'Laminas\\InputFilter',
+    'Laminas\\Paginator',
+    'Laminas\\Router',
+    'Laminas\\Validator',
+    'Laminas\\ApiTools',
+    'Laminas\\ApiTools\\ApiProblem',
+//    'Laminas\\ApiTools\\Configuration',
+    'Laminas\\ApiTools\\OAuth2',
+    'Laminas\\ApiTools\\MvcAuth',
+    'Laminas\\ApiTools\\Hal',
+    'Laminas\\ApiTools\\ContentNegotiation',
+    'Laminas\\ApiTools\\ContentValidation',
+    'Laminas\\ApiTools\\Rest',
+    'Laminas\\ApiTools\\Rpc',
+    'Laminas\\ApiTools\\Versioning',
     'Phpro\\DoctrineHydrationModule',
-    'ZF\\Apigility\\Doctrine\\Server',
-    'ZF\\OAuth2\\Doctrine',
-    'ZF\\OAuth2\\Doctrine\\Identity',
-    'ZF\\OAuth2\\Doctrine\\Permissions\\Acl',
+    'Laminas\\ApiTools\\Doctrine\\Server',
+    'Laminas\\ApiTools\\OAuth2\\Doctrine',
+    'Laminas\\ApiTools\\OAuth2\\Doctrine\\Identity',
+    'Laminas\\ApiTools\\OAuth2\\Doctrine\\Permissions\\Acl',
     'ZFTest\\OAuth2\\Doctrine\\Permissions\\Acl',
     'DoctrineModule',
     'DoctrineORMModule',
     'TestApi',
 ];
 
-if (class_exists(Zend\Router\Module::class)) {
-    $modules[] = 'Zend\\Router';
+if (class_exists(Laminas\Router\Module::class)) {
+    $modules[] = 'Laminas\\Router';
 }
 
 return [

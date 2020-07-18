@@ -2,9 +2,9 @@
 
 namespace ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity;
 
-use ZF\OAuth2\Doctrine\Entity\UserInterface;
-use Zend\Stdlib\ArraySerializableInterface;
-use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
+use Laminas\ApiTools\OAuth2\Doctrine\Entity\UserInterface;
+use Laminas\Stdlib\ArraySerializableInterface;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
 
 class User implements
     UserInterface,

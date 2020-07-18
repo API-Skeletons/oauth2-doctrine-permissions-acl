@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Permissions\Acl;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl;
 
 class Event
 {

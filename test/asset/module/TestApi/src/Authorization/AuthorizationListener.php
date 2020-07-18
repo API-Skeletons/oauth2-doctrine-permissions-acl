@@ -2,7 +2,7 @@
 
 namespace TestApi\Authorization;
 
-use ZF\MvcAuth\MvcAuthEvent;
+use Laminas\ApiTools\MvcAuth\MvcAuthEvent;
 use Db\Fixture\RoleFixture;
 
 class AuthorizationListener
@@ -15,8 +15,8 @@ class AuthorizationListener
 
             // Deny from all
             $authorization->deny();
-            $authorization->addResource('ZF\OAuth2\Controller\Auth::token');
-            $authorization->allow(null, 'ZF\OAuth2\Controller\Auth::token');
+            $authorization->addResource('Laminas\ApiTools\OAuth2\Controller\Auth::token');
+            $authorization->allow(null, 'Laminas\ApiTools\OAuth2\Controller\Auth::token');
 
             // Add resources and permissions
             $authorization->addResource('TestApi\V1\Rest\Role\Controller::collection');

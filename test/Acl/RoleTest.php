@@ -2,8 +2,8 @@
 
 namespace ZFTest\OAuth2\Doctrine\Permissions\Acl;
 
-use ZF\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
-use Zend\Stdlib\Request;
+use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
+use Laminas\Stdlib\Request;
 
 class RoleTest extends AbstractTest
 {

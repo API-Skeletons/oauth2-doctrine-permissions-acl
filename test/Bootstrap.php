@@ -6,7 +6,7 @@
 
 namespace ZFTest\OAuth2\Doctrine;
 
-use Zend\Loader\AutoloaderFactory;
+use Laminas\Loader\AutoloaderFactory;
 use RuntimeException;
 
 error_reporting(E_ALL | E_STRICT);
@@ -26,7 +26,7 @@ class Bootstrap
     {
         $config = __DIR__ . '/asset/autoload/oauth2.doctrine-orm.global.php';
         copy(
-            __DIR__ . '/../vendor/api-skeletons/zf-oauth2-doctrine/config/oauth2.doctrine-orm.global.php.dist',
+            __DIR__ . '/../vendor/api-skeletons/api-tools-oauth2-doctrine/config/oauth2.doctrine-orm.global.php.dist',
             $config
         );
         `find $config -type f -exec sed -i '' -e 's/ZFTest\\\\OAuth2\\\\Doctrine\\\\Entity\\\\User/ZFTest\\\\OAuth2\\\\Doctrine\\\\Permissions\\\\Acl\\\\Entity\\\\User/g' {} \;`;
@@ -54,10 +54,10 @@ class Bootstrap
         } else {
             include $zf2Path . '/Zend/Loader/AutoloaderFactory.php';
             AutoloaderFactory::factory(array(
-                'Zend\Loader\StandardAutoloader' => array(
+                'Laminas\Loader\StandardAutoloader' => array(
                     'autoregister_zf' => true,
                     'namespaces' => array(
-                        'ZF\OAuth2\Doctrine\Permissions\Acl' => __DIR__ . '/../src/',
+                        'Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl' => __DIR__ . '/../src/',
                         __NAMESPACE__ => __DIR__,
                     ),
                 ),

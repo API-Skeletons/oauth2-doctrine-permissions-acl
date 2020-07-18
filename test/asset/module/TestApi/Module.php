@@ -1,12 +1,12 @@
 <?php
 namespace TestApi;
 
-use ZF\Apigility\Provider\ApigilityProviderInterface;
-use Zend\Mvc\ModuleRouteListener;
-use ZF\MvcAuth\MvcAuthEvent;
-use Zend\Mvc\MvcEvent;
+use Laminas\ApiTools\Provider\ApiToolsProviderInterface;
+use Laminas\Mvc\ModuleRouteListener;
+use Laminas\ApiTools\MvcAuth\MvcAuthEvent;
+use Laminas\Mvc\MvcEvent;
 
-class Module implements ApigilityProviderInterface
+class Module implements ApiToolsProviderInterface
 {
     public function getConfig()
     {
@@ -16,7 +16,7 @@ class Module implements ApigilityProviderInterface
     public function getAutoloaderConfig()
     {
         return [
-            'ZF\Apigility\Autoloader' => [
+            'Laminas\ApiTools\Autoloader' => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/src',
                 ],
