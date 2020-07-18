@@ -1,9 +1,9 @@
 OAuth2 Doctrine Permissions ACL
 -------------------------------
 
-[![Build Status](https://travis-ci.org/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl.svg)](https://travis-ci.org/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl)
+[![Build Status](https://travis-ci.org/API-Skeletons/oauth2-doctrine-permissions-acl.svg)](https://travis-ci.org/API-Skeletons/oauth2-doctrine-permissions-acl)
 [![Gitter](https://badges.gitter.im/api-skeletons/open-source.svg)](https://gitter.im/api-skeletons/open-source)
-[![Total Downloads](https://poser.pugx.org/api-skeletons/api-tools-oauth2-doctrine-permissions-acl/downloads)](https://packagist.org/packages/api-skeletons/api-tools-oauth2-doctrine-permissions-acl)
+[![Total Downloads](https://poser.pugx.org/api-skeletons/oauth2-doctrine-permissions-acl/downloads)](https://packagist.org/packages/api-skeletons/oauth2-doctrine-permissions-acl)
 
 
 Versions
@@ -15,13 +15,13 @@ Versions
 About
 -----
 
-This provides ACL for [api-skeletons/api-tools-oauth2-doctrine](https://github.com/API-Skeletons/api-tools-oauth2-doctrine).  This replaces some components of [laminas-api-tools/api-tools-mvc-auth](https://github.com/laminas-api-tools/api-tools-mvc-auth) to enable multiple roles per user and auto injecting roles into the ACL.
+This provides ACL for [api-skeletons/oauth2-doctrine](https://github.com/API-Skeletons/oauth2-doctrine).  This replaces some components of [laminas-api-tools/api-tools-mvc-auth](https://github.com/laminas-api-tools/api-tools-mvc-auth) to enable multiple roles per user and auto injecting roles into the ACL.
 
 This library is specifically for a many to many relationship between Role and User.  If you have a one to many relationship where each user may have only one role this library is not for you.
 
-This library depends on [api-skeletons/api-tools-oauth2-doctrine-identity](https://github.com/API-Skeletons/api-tools-oauth2-doctrine-identity).  Please see that library for implementation details.
+This library depends on [api-skeletons/auth2-doctrine-identity](https://github.com/API-Skeletons/auth2-doctrine-identity).  Please see that library for implementation details.
 
-![Entity Relationship Diagram](https://raw.githubusercontent.com/API-Skeletons/api-tools-oauth2-doctrine-permissions/master/media/erd.png)
+![Entity Relationship Diagram](https://raw.githubusercontent.com/API-Skeletons/oauth2-doctrine-permissions/master/media/erd.png)
 
 Entity Relationship Diagram created with [Skipper](https://skipper18.com)
 
@@ -31,7 +31,7 @@ Installation
 Installation of this module uses composer. For composer documentation, please refer to [getcomposer.org](http://getcomposer.org/).
 
 ```sh
-composer require api-skeletons/api-tools-oauth2-doctrine-permissions-acl
+composer require api-skeletons/oauth2-doctrine-permissions-acl
 ```
 
 This will be added to your application's list of modules:
@@ -46,17 +46,17 @@ This will be added to your application's list of modules:
 Role Related Interfaces
 -----------------------
 
-The ERD above shows the Doctrine relationship to a `Role` entity.  To fetch Roles for a user the User enitity must implement [`ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface`](https://github.com/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl/blob/master/src/Role/ProviderInterface.php).  The `Role` entity must implement [`Laminas\Permissions\Acl\Role\RoleInterface`](https://github.com/laminas/laminas-permissions-acl/blob/master/src/Role/RoleInterface.php).
+The ERD above shows the Doctrine relationship to a `Role` entity.  To fetch Roles for a user the User enitity must implement [`ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface`](https://github.com/API-Skeletons/oauth2-doctrine-permissions-acl/blob/master/src/Role/ProviderInterface.php).  The `Role` entity must implement [`Laminas\Permissions\Acl\Role\RoleInterface`](https://github.com/laminas/laminas-permissions-acl/blob/master/src/Role/RoleInterface.php).
 
-Roles may have parents.  This is optional but the parent relationship is often important in ACL.  To create a role hierarchy your Role entity must implement [`ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface`](https://github.com/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl/blob/master/src/Role/HierarchicalInterface.php).  This interface also implements [`Laminas\Permissions\Acl\Role\RoleInterface`](https://github.com/laminas/laminas-permissions-acl/blob/master/src/Role/RoleInterface.php).
+Roles may have parents.  This is optional but the parent relationship is often important in ACL.  To create a role hierarchy your Role entity must implement [`ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface`](https://github.com/API-Skeletons/oauth2-doctrine-permissions-acl/blob/master/src/Role/HierarchicalInterface.php).  This interface also implements [`Laminas\Permissions\Acl\Role\RoleInterface`](https://github.com/laminas/laminas-permissions-acl/blob/master/src/Role/RoleInterface.php).
 
 
 Adding Roles to the ACL
 -----------------------
 
-To copy roles into the ACL from your Role entity copy [`config/oauth2.doctrine.permisisons.acl.global.php.dist`](https://github.com/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl/blob/master/config/oauth2.doctrine.permisisons.global.php.dist) to your application `config/autoload/oauth2.doctrine.permisisons.acl.global.php`
+To copy roles into the ACL from your Role entity copy [`config/oauth2.doctrine.permisisons.acl.global.php.dist`](https://github.com/API-Skeletons/oauth2-doctrine-permissions-acl/blob/master/config/oauth2.doctrine.permisisons.global.php.dist) to your application `config/autoload/oauth2.doctrine.permisisons.acl.global.php`
 ```php
-'api-tools-oauth2-doctrine-permissions-acl' => [
+'apiskeletons-oauth2-doctrine-permissions-acl' => [
     'role' => [
         'entity' => 'Db\Entity\Role',
         'object_manager' => 'doctrine.entitymanager.orm_default',
