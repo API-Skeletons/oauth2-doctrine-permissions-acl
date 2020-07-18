@@ -1,6 +1,6 @@
 <?php
 
-namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Exception;
+namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Exception;
 
 use Exception;
 

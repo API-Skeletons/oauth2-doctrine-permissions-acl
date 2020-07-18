@@ -1,9 +1,9 @@
 <?php
 
-namespace ZFTest\OAuth2\Doctrine\Permissions\Acl;
+namespace ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl;
 
 use Doctrine\ORM\Tools\SchemaTool;
-use Laminas\ApiTools\OAuth2\Doctrine\Entity;
+use ApiSkeletons\OAuth2\Doctrine\Entity;
 use ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User;
 use ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role;
 use Laminas\Crypt\Password\Bcrypt;
@@ -40,7 +40,7 @@ abstract class AbstractTest extends AbstractHttpControllerTestCase
         $objectManager = $serviceManager->get('doctrine.entitymanager.orm_default');
 
         try {
-            $objectManager->getRepository('Laminas\ApiTools\OAuth2\Doctrine\Entity\Scope')->findAll();
+            $objectManager->getRepository('ApiSkeletons\OAuth2\Doctrine\Entity\Scope')->findAll();
         } catch (Exception $e) {
             $bcrypt = new Bcrypt();
             $bcrypt->setCost(10);

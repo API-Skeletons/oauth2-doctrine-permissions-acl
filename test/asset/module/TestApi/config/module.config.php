@@ -1,4 +1,5 @@
 <?php
+
 return [
     'router' => [
         'routes' => [
@@ -38,7 +39,7 @@ return [
             'collection_query_whitelist' => [],
             'page_size' => 25,
             'page_size_param' => null,
-            'entity_class' => \ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role::class,
+            'entity_class' => \ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role::class,
             'collection_class' => \TestApi\V1\Rest\Role\RoleCollection::class,
             'service_name' => 'Role',
         ],
@@ -63,7 +64,7 @@ return [
     ],
     'api-tools-hal' => [
         'metadata_map' => [
-            \ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role::class => [
+            \ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role::class => [
                 'route_identifier_name' => 'role_id',
                 'entity_identifier_name' => 'id',
                 'route_name' => 'test-api.rest.doctrine.role',
@@ -86,7 +87,7 @@ return [
     ],
     'doctrine-hydrator' => [
         'TestApi\\V1\\Rest\\Role\\RoleHydrator' => [
-            'entity_class' => \ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role::class,
+            'entity_class' => \ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role::class,
             'object_manager' => 'doctrine.entitymanager.orm_default',
             'by_value' => true,
             'strategies' => [],

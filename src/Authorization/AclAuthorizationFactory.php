@@ -6,7 +6,7 @@
  *     for api-skeletons/api-tools-oauth2-doctrine-permissions
  */
 
-namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization;
+namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;

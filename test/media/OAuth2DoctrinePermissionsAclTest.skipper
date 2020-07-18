@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<skipper version="3.2.7.1338" mvc="Without MVC" orm="Doctrine2" name="api-tools-oauth2-doctrine-permissions-acl" uuid="b9373761-2af6-4a3b-88c8-6291e4b09235">
-  <module name="\ACL" local-name="ACL" namespace="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity" local-namespace="ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity" export-format="Doctrine2Xml" export-path="../asset/module/Doctrine/config/orm" uuid="b6eeda23-9d51-4019-99a0-544a7d024c24">
-    <entity name="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User" local-name="User" namespace="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity" uuid="888a6a37-9d0c-497f-accc-ec5ab40235fe">
+<skipper version="3.2.24.1662" mvc="Without MVC" orm="Doctrine2" name="api-tools-oauth2-doctrine-permissions-acl" uuid="b9373761-2af6-4a3b-88c8-6291e4b09235">
+  <module name="\ACL" local-name="ACL" namespace="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity" local-namespace="ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity" export-format="Doctrine2Xml" export-path="../asset/module/Doctrine/config/orm" uuid="b6eeda23-9d51-4019-99a0-544a7d024c24">
+    <entity name="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\User" local-name="User" namespace="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity" uuid="888a6a37-9d0c-497f-accc-ec5ab40235fe">
       <field name="id" type="bigint" required="true" unique="true" primary="true" auto-increment="true" uuid="5f7ae726-7073-4df0-a9d2-06724ad89d60"/>
       <field name="username" type="string" uuid="37cec636-9384-429b-8014-f291e8522298"/>
       <field name="password" type="string" uuid="6347ec81-1bc9-48cc-827a-de6e307794d0"/>
@@ -10,24 +10,24 @@
       <field name="country" type="string" uuid="9ddfb561-3a21-41eb-8d3e-69f66b20cb0e"/>
       <field name="phone_number" type="string" uuid="b14d9816-c805-48b2-96f9-a31b69834273"/>
     </entity>
-    <entity name="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" local-name="Role" namespace="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity" uuid="59150071-f917-499b-8c8f-e656acf884a3">
+    <entity name="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" local-name="Role" namespace="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity" uuid="59150071-f917-499b-8c8f-e656acf884a3">
       <field name="id" type="bigint" required="true" unique="true" primary="true" auto-increment="true" uuid="6f7cd2b0-4391-41d2-9705-690cb0bc5a25"/>
       <field name="roleId" type="string" required="true" uuid="4a11fe43-9429-4011-a24d-94486f3d4e5f"/>
       <field name="role_id" type="integer" uuid="b8147cd8-d37f-4eee-99f9-a1ac0d47362f"/>
     </entity>
-    <association from="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" to="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" caption="Parent Child" owner-alias="child" inverse-alias="parent" many-owner="true" many-inverse="false" uuid="ed955ccb-445b-47d9-af6f-784a24f96bc7">
-      <association-field from="role_id" to="id"/>
+    <association from="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" to="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" caption="Parent Child" owner-alias="child" inverse-alias="parent" many-owner="true" many-inverse="false" uuid="ed955ccb-445b-47d9-af6f-784a24f96bc7">
+      <association-field from="role_id" to="id" uuid="8693f9dd-c7df-4d3d-90f1-cc0fbd738ff2"/>
     </association>
-    <entity name="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\UserToRole" local-name="UserToRole" namespace="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity" uuid="85f0eaf8-4362-4d64-8aaa-248ce7aa7b31">
+    <entity name="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\UserToRole" local-name="UserToRole" namespace="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity" uuid="85f0eaf8-4362-4d64-8aaa-248ce7aa7b31">
       <field name="user_id" type="bigint" required="true" primary="true" uuid="195f9d6d-1053-4b14-a801-9be99d148c51"/>
       <field name="role_id" type="bigint" required="true" primary="true" uuid="d0ad7bea-3f51-4cd8-ac88-e3094ea620a7"/>
     </entity>
-    <many-to-many mn-entity="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\UserToRole" uuid="520341ba-c82d-450d-a590-69ae6f6687d1">
-      <many-to-many-entity name="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" owning-side="true" alias="role" uuid="20a20d1d-206a-4d42-9142-b11728b21683">
-        <many-to-many-field from="role_id" to="id"/>
+    <many-to-many mn-entity="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\UserToRole" uuid="520341ba-c82d-450d-a590-69ae6f6687d1">
+      <many-to-many-entity name="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" owning-side="true" alias="role" uuid="20a20d1d-206a-4d42-9142-b11728b21683">
+        <many-to-many-field from="role_id" to="id" uuid="1c8d7c10-54d9-44c7-97a4-e2c5891c4169"/>
       </many-to-many-entity>
-      <many-to-many-entity name="\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User" owning-side="false" alias="user" uuid="b1e58bdf-b594-492c-a10a-12651e99235d">
-        <many-to-many-field from="user_id" to="id"/>
+      <many-to-many-entity name="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\User" owning-side="false" alias="user" uuid="b1e58bdf-b594-492c-a10a-12651e99235d">
+        <many-to-many-field from="user_id" to="id" uuid="8f0cc036-a7c7-462e-833a-fe6d7188180a"/>
       </many-to-many-entity>
     </many-to-many>
     <comment caption="$user-&gt;getRole()" uuid="6237a60c-447d-4dab-8bc1-ffd9b97b307d"/>

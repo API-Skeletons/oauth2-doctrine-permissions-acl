@@ -1,10 +1,10 @@
 <?php
 
-namespace ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity;
+namespace ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity;
 
-use Laminas\ApiTools\OAuth2\Doctrine\Entity\UserInterface;
+use ApiSkeletons\OAuth2\Doctrine\Entity\UserInterface;
 use Laminas\Stdlib\ArraySerializableInterface;
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
 
 class User implements
     UserInterface,
@@ -26,7 +26,7 @@ class User implements
      *
      * @return User
      */
-    public function addRole(\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role $role)
+    public function addRole(\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role $role)
     {
         $this->role[] = $role;
 
@@ -38,7 +38,7 @@ class User implements
      *
      * @param \Db\Entity\Role $role
      */
-    public function removeRole(\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role $role)
+    public function removeRole(\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role $role)
     {
         $this->role->removeElement($role);
     }

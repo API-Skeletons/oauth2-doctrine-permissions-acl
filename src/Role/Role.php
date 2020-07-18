@@ -1,6 +1,6 @@
 <?php
 
-namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role;
+namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role;
 
 use Laminas\Permissions\Acl\Role\GenericRole;
 use GianArb\Angry\Uninvokable;

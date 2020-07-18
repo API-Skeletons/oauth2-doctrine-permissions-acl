@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xsi="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User">
+  <entity name="ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\User">
     <id name="id" type="bigint">
       <generator strategy="AUTO"/>
     </id>
@@ -10,6 +10,6 @@
     <field name="email" type="string" nullable="true"/>
     <field name="country" type="string" nullable="true"/>
     <field name="phone_number" type="string" nullable="true"/>
-    <many-to-many field="role" target-entity="ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" mapped-by="user"/>
+    <many-to-many field="role" target-entity="ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role" mapped-by="user"/>
   </entity>
 </doctrine-mapping>

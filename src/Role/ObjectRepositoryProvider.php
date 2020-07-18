@@ -8,11 +8,11 @@
  *     for api-skeletons/api-tools-oauth2-doctrine-permissions
  */
 
-namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role;
+namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role;
 
 use Doctrine\Common\Persistence\ObjectRepository;
 use Laminas\Permissions\Acl\Role\RoleInterface;
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role;
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
 use GianArb\Angry\Uninvokable;

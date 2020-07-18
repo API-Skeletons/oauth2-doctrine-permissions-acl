@@ -6,16 +6,16 @@
  *     for api-skeletons/api-tools-oauth2-doctrine-permissions
  */
 
-namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization;
+namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Authorization;
 
 use Laminas\Permissions\Acl\Acl;
 use Laminas\EventManager\EventManager;
 use Laminas\EventManager\SharedEventManagerInterface;
 use Laminas\ApiTools\MvcAuth\Identity\IdentityInterface;
 use Laminas\ApiTools\MvcAuth\Authorization\AuthorizationInterface;
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Event;
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
-use Laminas\ApiTools\OAuth2\Doctrine\Identity\AuthenticatedIdentity;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Event;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface;
+use ApiSkeletons\OAuth2\Doctrine\Identity\AuthenticatedIdentity;
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
 use GianArb\Angry\Uninvokable;

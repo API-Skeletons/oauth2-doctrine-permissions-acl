@@ -1,6 +1,6 @@
 <?php
 
-namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl;
+namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl;
 
 use Laminas\ApiTools\MvcAuth\Authorization\AuthorizationInterface as MvcAuthAuthorizationInterface;
 

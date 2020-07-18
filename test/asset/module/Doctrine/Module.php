@@ -1,11 +1,11 @@
 <?php
 
-namespace ZFTest\OAuth2\Doctrine\Permissions\Acl;
+namespace ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl;
 
 use Laminas\EventManager\EventManager;
 use Laminas\ModuleManager\ModuleManager;
 use Laminas\ServiceManager\ServiceManager;
-use Laminas\ApiTools\OAuth2\Doctrine\EventListener\DynamicMappingSubscriber;
+use ApiSkeletons\OAuth2\Doctrine\EventListener\DynamicMappingSubscriber;
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
 use Laminas\Mvc\MvcEvent;
 

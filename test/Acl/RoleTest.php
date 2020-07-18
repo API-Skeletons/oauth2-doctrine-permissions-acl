@@ -1,8 +1,8 @@
 <?php
 
-namespace ZFTest\OAuth2\Doctrine\Permissions\Acl;
+namespace ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl;
 
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\ObjectRepositoryProvider;
 use Laminas\Stdlib\Request;
 
 class RoleTest extends AbstractTest

@@ -15,8 +15,8 @@ class AuthorizationListener
 
             // Deny from all
             $authorization->deny();
-            $authorization->addResource('Laminas\ApiTools\OAuth2\Controller\Auth::token');
-            $authorization->allow(null, 'Laminas\ApiTools\OAuth2\Controller\Auth::token');
+            $authorization->addResource('ApiSkeletons\OAuth2\Controller\Auth::token');
+            $authorization->allow(null, 'ApiSkeletons\OAuth2\Controller\Auth::token');
 
             // Add resources and permissions
             $authorization->addResource('TestApi\V1\Rest\Role\Controller::collection');

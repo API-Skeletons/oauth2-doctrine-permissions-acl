@@ -23,10 +23,10 @@ $modules = [
     'Laminas\\ApiTools\\Versioning',
     'Phpro\\DoctrineHydrationModule',
     'Laminas\\ApiTools\\Doctrine\\Server',
-    'Laminas\\ApiTools\\OAuth2\\Doctrine',
-    'Laminas\\ApiTools\\OAuth2\\Doctrine\\Identity',
-    'Laminas\\ApiTools\\OAuth2\\Doctrine\\Permissions\\Acl',
-    'ZFTest\\OAuth2\\Doctrine\\Permissions\\Acl',
+    'ApiSkeletons\\OAuth2\\Doctrine',
+    'ApiSkeletons\\OAuth2\\Doctrine\\Identity',
+    'ApiSkeletons\\OAuth2\\Doctrine\\Permissions\\Acl',
+    'ApiSkeletonsTest\\OAuth2\\Doctrine\\Permissions\\Acl',
     'DoctrineModule',
     'DoctrineORMModule',
     'TestApi',
@@ -49,7 +49,7 @@ return [
         'module_paths' => [
             __DIR__ . '/../../vendor',
             __DIR__ . '/module',
-            'ZFTest\\OAuth2\\Doctrine\\Permissions\\Acl' => __DIR__ . '/module/Doctrine',
+            'ApiSkeletonsTest\\OAuth2\\Doctrine\\Permissions\\Acl' => __DIR__ . '/module/Doctrine',
             'TestApi' => __DIR__ . '/module/TestApi',
         ],
 

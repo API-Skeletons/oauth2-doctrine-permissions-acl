@@ -2,11 +2,11 @@
 /**
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
  * @copyright Copyright (c) 2014-2016 Zend Technologies USA Inc. (http://www.zend.com)
- * @copyright Copyright (c) 2016 Tom H Anderson <tom.h.anderson@gmail.com>
- *     for api-skeletons/api-tools-oauth2-doctrine-permissions
+ * @copyright Copyright (c) 2016-2020 Tom H Anderson <tom.h.anderson@gmail.com>
+ *     for api-skeletons/oauth2-doctrine-permissions
  */
 
-namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Factory;
+namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Factory;
 
 use Interop\Container\ContainerInterface;
 use Laminas\Http\Request;

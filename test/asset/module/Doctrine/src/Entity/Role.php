@@ -1,8 +1,8 @@
 <?php
 
-namespace ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity;
+namespace ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity;
 
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface;
 
 class Role implements
     HierarchicalInterface
@@ -26,7 +26,7 @@ class Role implements
      *
      * @return Role
      */
-    public function addUser(\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User $user)
+    public function addUser(\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\User $user)
     {
         $this->user[] = $user;
 
@@ -38,7 +38,7 @@ class Role implements
      *
      * @param \Db\Entity\User $user
      */
-    public function removeUser(\ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User $user)
+    public function removeUser(\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\User $user)
     {
         $this->user->removeElement($user);
     }

@@ -9,7 +9,7 @@
  *     for api-skeletons/api-tools-oauth2-doctrine-permissions
  */
 
-namespace Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role;
+namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role;
 
 use Laminas\Permissions\Acl\Role\RoleInterface;
 

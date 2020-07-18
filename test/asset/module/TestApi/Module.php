@@ -1,4 +1,5 @@
 <?php
+
 namespace TestApi;
 
 use Laminas\ApiTools\Provider\ApiToolsProviderInterface;

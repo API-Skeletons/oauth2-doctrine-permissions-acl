@@ -39,16 +39,16 @@ This will be added to your application's list of modules:
 ```php
 'modules' => array(
    ...
-   'Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl',
+   'ApiSkeletons\OAuth2\Doctrine\Permissions\Acl',
 ),
 ```
 
 Role Related Interfaces
 -----------------------
 
-The ERD above shows the Doctrine relationship to a `Role` entity.  To fetch Roles for a user the User enitity must implement [`Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface`](https://github.com/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl/blob/master/src/Role/ProviderInterface.php).  The `Role` entity must implement [`Laminas\Permissions\Acl\Role\RoleInterface`](https://github.com/laminas/laminas-permissions-acl/blob/master/src/Role/RoleInterface.php).
+The ERD above shows the Doctrine relationship to a `Role` entity.  To fetch Roles for a user the User enitity must implement [`ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\ProviderInterface`](https://github.com/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl/blob/master/src/Role/ProviderInterface.php).  The `Role` entity must implement [`Laminas\Permissions\Acl\Role\RoleInterface`](https://github.com/laminas/laminas-permissions-acl/blob/master/src/Role/RoleInterface.php).
 
-Roles may have parents.  This is optional but the parent relationship is often important in ACL.  To create a role hierarchy your Role entity must implement [`Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface`](https://github.com/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl/blob/master/src/Role/HierarchicalInterface.php).  This interface also implements [`Laminas\Permissions\Acl\Role\RoleInterface`](https://github.com/laminas/laminas-permissions-acl/blob/master/src/Role/RoleInterface.php).
+Roles may have parents.  This is optional but the parent relationship is often important in ACL.  To create a role hierarchy your Role entity must implement [`ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role\HierarchicalInterface`](https://github.com/API-Skeletons/api-tools-oauth2-doctrine-permissions-acl/blob/master/src/Role/HierarchicalInterface.php).  This interface also implements [`Laminas\Permissions\Acl\Role\RoleInterface`](https://github.com/laminas/laminas-permissions-acl/blob/master/src/Role/RoleInterface.php).
 
 
 Adding Roles to the ACL
@@ -119,8 +119,8 @@ class AuthorizationListener
         $authorization->deny();
 
         // Allow from all for oauth authentication
-        $authorization->addResource('Laminas\ApiTools\OAuth2\Controller\Auth::token');
-        $authorization->allow(null, 'Laminas\ApiTools\OAuth2\Controller\Auth::token');
+        $authorization->addResource('ApiSkeletons\OAuth2\Controller\Auth::token');
+        $authorization->allow(null, 'ApiSkeletons\OAuth2\Controller\Auth::token');
 
         // Add application specific resources
         $authorization->addResource('FooBar\V1\Rest\Foo\Controller::collection');
@@ -139,7 +139,7 @@ then create an override when the authorization is checked to allow for those oth
 proxied as roles:
 
 ```php
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Event;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Event;
 use Laminas\EventManager\Event as ZendEvent;
 
 // Allow membership as a role
