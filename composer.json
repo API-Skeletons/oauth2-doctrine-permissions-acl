@@ -1,6 +1,6 @@
 {
     "name": "api-skeletons/oauth2-doctrine-permissions-acl",
-    "description": "ACL permissions for api-skeletons/oauth2-doctrine for Laminas",
+    "description": "ACL permissions for api-skeletons/oauth2-doctrine-identity for Laminas",
     "type": "library",
     "license": "MIT",
     "keywords": [
