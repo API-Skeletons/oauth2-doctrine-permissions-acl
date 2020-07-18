@@ -4,7 +4,7 @@
  * @license   http://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
  */
 
-namespace ZFTest\OAuth2\Doctrine;
+namespace ApiSkeletonsTest\OAuth2\Doctrine;
 
 use Laminas\Loader\AutoloaderFactory;
 use RuntimeException;
@@ -26,7 +26,7 @@ class Bootstrap
     {
         $config = __DIR__ . '/asset/autoload/oauth2.doctrine-orm.global.php';
         copy(
-            __DIR__ . '/../vendor/api-skeletons/api-tools-oauth2-doctrine/config/oauth2.doctrine-orm.global.php.dist',
+            __DIR__ . '/../vendor/api-skeletons/oauth2-doctrine/config/oauth2.doctrine-orm.global.php.dist',
             $config
         );
         `find $config -type f -exec sed -i '' -e 's/Testing\\\\Entity\\\\User/ApiSkeletonsTest\\\\OAuth2\\\\Doctrine\\\\Permissions\\\\Acl\\\\Entity\\\\User/g' {} \;`;

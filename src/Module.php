@@ -58,6 +58,6 @@ class Module implements
 
     public function getModuleDependencies()
     {
-        return ['Laminas\\ApiTools\\OAuth2\\Doctrine\\Identity'];
+        return ['ApiSkeletons\OAuth2\Doctrine\Identity'];
     }
 }

@@ -17,10 +17,10 @@ class AuthorizationListenerFactory
         $config = $container->get('config');
 
         // If the Role configuration exists
-        if (isset($config['apiskeletons-doctrine-permissions-acl']['role'])) {
-            $objectManager = $container->get($config['apiskeletons-doctrine-permissions-acl']['role']['object_manager']);
+        if (isset($config['apiskeletons-oauth2-doctrine-permissions-acl']['role'])) {
+            $objectManager = $container->get($config['apiskeletons-oauth2-doctrine-permissions-acl']['role']['object_manager']);
             $objectRepositoryProvider = new ObjectRepositoryProvider(
-                $objectManager->getRepository($config['apiskeletons-doctrine-permissions-acl']['role']['entity'])
+                $objectManager->getRepository($config['apiskeletons-oauth2-doctrine-permissions-acl']['role']['entity'])
             );
         } else {
             // Return an empty provider

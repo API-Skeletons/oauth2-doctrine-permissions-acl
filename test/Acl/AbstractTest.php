@@ -4,8 +4,8 @@ namespace ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl;
 
 use Doctrine\ORM\Tools\SchemaTool;
 use ApiSkeletons\OAuth2\Doctrine\Entity;
-use ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\User;
-use ZFTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role;
+use ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\User;
+use ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\Role;
 use Laminas\Crypt\Password\Bcrypt;
 use Datetime;
 use Exception;
@@ -218,6 +218,7 @@ M4pYQmuiDXJbwYcf+2ECQCB3s5z9niG6oxVicCfK/l6VJNPifhtr8N48jO0ejWeB
 
             $objectManager->persist($publicKey);
             $objectManager->flush();
+
         }
     }
 }

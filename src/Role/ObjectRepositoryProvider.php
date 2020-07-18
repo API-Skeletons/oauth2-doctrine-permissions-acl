@@ -34,49 +34,50 @@ class ObjectRepositoryProvider
     {
         $roles = [];
 
-        if ($this->objectRepository) {
-            $roles = $this->objectRepository->findAll();
+        if (! $this->objectRepository) {
+            return false;
+        }
+        $roles = $this->objectRepository->findAll();
 
-            // Sort roles so any with parent roles are satisfied
-            $sorted = [];
-            while (sizeof($roles)) {
-                foreach ($roles as $key => $role) {
-                    if (! $role instanceof RoleInterface) {
-                        unset($roles[$key]);
-                        continue;
-                    }
-
-                    if (! $role instanceof HierarchicalInterface
-                        || ! $role->getParent()
-                        || in_array($role->getParent(), $sorted)
-                    ) {
-                        $sorted[] = $role;
-                        unset($roles[$key]);
-                        continue;
-                    }
-                }
-            }
-
-            foreach ($sorted as $role) {
+        // Sort roles so any with parent roles are satisfied
+        $sorted = [];
+        while (sizeof($roles)) {
+            foreach ($roles as $key => $role) {
                 if (! $role instanceof RoleInterface) {
+                    unset($roles[$key]);
                     continue;
                 }
 
-                $parents = [];
-                if ($role instanceof Role\HierarchicalInterface) {
-                    $parent = $role->getParent();
-                    while ($parent) {
-                        $parents[] = $parent->getRoleId();
-                        $parent = $parent->getParent();
-                    }
+                if (! $role instanceof HierarchicalInterface
+                    || ! $role->getParent()
+                    || in_array($role->getParent(), $sorted)
+                ) {
+                    $sorted[] = $role;
+                    unset($roles[$key]);
+                    continue;
                 }
+            }
+        }
 
-                // ACL roles for parents read right to left.  These are built
-                // left to right so reverse the array
-                $roles[] = new Role\Role($role->getRoleId(), array_reverse($parents));
+        foreach ($sorted as $role) {
+            if (! $role instanceof RoleInterface) {
+                continue;
             }
 
-            return $roles;
+            $parents = [];
+            if ($role instanceof Role\HierarchicalInterface) {
+                $parent = $role->getParent();
+                while ($parent) {
+                    $parents[] = $parent->getRoleId();
+                    $parent = $parent->getParent();
+                }
+            }
+
+            // ACL roles for parents read right to left.  These are built
+            // left to right so reverse the array
+            $roles[] = new Role\Role($role->getRoleId(), array_reverse($parents));
         }
+
+        return $roles;
     }
 }

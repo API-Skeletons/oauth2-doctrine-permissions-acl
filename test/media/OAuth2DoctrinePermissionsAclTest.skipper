@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<skipper version="3.2.24.1662" mvc="Without MVC" orm="Doctrine2" name="api-tools-oauth2-doctrine-permissions-acl" uuid="b9373761-2af6-4a3b-88c8-6291e4b09235">
+<skipper version="3.2.24.1662" mvc="Without MVC" orm="Doctrine2" name="oauth2-doctrine-permissions-acl" uuid="b9373761-2af6-4a3b-88c8-6291e4b09235">
   <module name="\ACL" local-name="ACL" namespace="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity" local-namespace="ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity" export-format="Doctrine2Xml" export-path="../asset/module/Doctrine/config/orm" uuid="b6eeda23-9d51-4019-99a0-544a7d024c24">
     <entity name="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity\User" local-name="User" namespace="\ApiSkeletonsTest\OAuth2\Doctrine\Permissions\Acl\Entity" uuid="888a6a37-9d0c-497f-accc-ec5ab40235fe">
       <field name="id" type="bigint" required="true" unique="true" primary="true" auto-increment="true" uuid="5f7ae726-7073-4df0-a9d2-06724ad89d60"/>

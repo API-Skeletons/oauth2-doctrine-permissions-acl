@@ -12,8 +12,8 @@ use Interop\Container\ContainerInterface;
 use Laminas\Http\Request;
 use Laminas\ServiceManager\FactoryInterface;
 use Laminas\ServiceManager\ServiceLocatorInterface;
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorization;
-use Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorizationFactory as AclFactory;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorization;
+use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Authorization\AclAuthorizationFactory as AclFactory;
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
 
