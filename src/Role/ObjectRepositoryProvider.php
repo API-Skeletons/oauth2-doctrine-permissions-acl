@@ -10,7 +10,7 @@
 
 namespace ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role;
 
-use Doctrine\Common\Persistence\ObjectRepository;
+use Doctrine\ORM\EntityRepository;
 use Laminas\Permissions\Acl\Role\RoleInterface;
 use ApiSkeletons\OAuth2\Doctrine\Permissions\Acl\Role;
 use GianArb\Angry\Unclonable;
@@ -25,7 +25,7 @@ class ObjectRepositoryProvider
 
     protected $objectRepository;
 
-    public function __construct(ObjectRepository $objectRepository = null)
+    public function __construct(EntityRepository $objectRepository = null)
     {
         $this->objectRepository = $objectRepository;
     }
